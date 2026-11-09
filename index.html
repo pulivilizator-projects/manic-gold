@@ -137,9 +137,15 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
 @media (min-width:900px){#why,#works,#prices,#reviews,#contacts,.gf-root>footer,.gf-marq{--gx:62px}}
 #why::before,#works::before,#prices::before,#reviews::before,#contacts::before,.gf-root>footer::before,.gf-marq::before,.gf-marq::after{content:"";position:absolute;left:var(--gx);right:var(--gx);top:-1px;height:1px;background:#2A2418;pointer-events:none}
 .gf-marq::before{top:0}.gf-marq::after{top:auto;bottom:0}  /* у бегущей строки overflow:hidden — линии внутри */
-.gf-tb,.gf-tm,.gf-th{fill:none;stroke-linecap:round;stroke-linejoin:round}
-.gf-tb{stroke:#6E5020}.gf-tm{stroke:#D4AF6A}.gf-th{stroke:#FFF3CC;opacity:.8}
-.gf-bulb{fill:url(#gfBulb)}
+.gf-tb,.gf-t2,.gf-tm,.gf-t4,.gf-th{fill:none;stroke-linecap:round;stroke-linejoin:round}
+/* палитра взята с потока на canvas, чтобы SVG-трубки продолжали его без смены цвета */
+.gf-tb{stroke:#5E4C2E}.gf-t2{stroke:#806941}.gf-tm{stroke:#A48B58}.gf-t4{stroke:#CDB173}.gf-th{stroke:#E3C67D}
+[data-t^="conn"]{stroke-linecap:butt}
+#prices ul,#prices li{transition:border-color .8s}
+.gf-gilded #prices ul,.gf-gilded #prices li{border-color:transparent!important}
+#reviews figure{transition:border-color .8s}
+.gf-gilded-r #reviews figure{border-color:transparent!important}
+.gf-bulb{fill:#A48B58}
 /* застывшие капли под отзывами (SVG в общем слое золота) */
 .gf-dr{--k:1.15;transform:scale(calc(var(--d,0) * var(--k)));transform-origin:0 0}
 @media (min-width:900px){.gf-dr{--k:1.5}}
@@ -466,17 +472,19 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
 
   <svg ref="{{ setFlow }}" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: -1">
     <defs>
-      <linearGradient id="gfDrip" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#6E5020"></stop><stop offset=".22" stop-color="#B8913F"></stop><stop offset=".42" stop-color="#FFF3CC"></stop><stop offset=".58" stop-color="#E9C97F"></stop><stop offset=".8" stop-color="#A47B33"></stop><stop offset="1" stop-color="#6E5020"></stop></linearGradient>
+      <linearGradient id="gfDrip" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#5E4C2E"></stop><stop offset=".18" stop-color="#806941"></stop><stop offset=".36" stop-color="#CDB173"></stop><stop offset=".48" stop-color="#E3C67D"></stop><stop offset=".64" stop-color="#A48B58"></stop><stop offset=".85" stop-color="#806941"></stop><stop offset="1" stop-color="#5E4C2E"></stop></linearGradient>
       <radialGradient id="gfBulb" cx=".38" cy=".32" r=".72"><stop offset="0" stop-color="#FFF6DA"></stop><stop offset=".35" stop-color="#E9C97F"></stop><stop offset="1" stop-color="#7A5A24"></stop></radialGradient>
     </defs>
     <g><path class="gf-tb" data-t="conn0" d=""></path><path class="gf-tb" data-t="conn1" d=""></path><path class="gf-tb" data-t="top0" d=""></path><path class="gf-tb" data-t="top1" d=""></path><path class="gf-tb" data-t="serp" d=""></path><path class="gf-tb" data-t="drip0" d=""></path><path class="gf-tb" data-t="rev0" d=""></path><path class="gf-tb" data-t="rev1" d=""></path><path class="gf-tb" data-t="cL0" d=""></path><path class="gf-tb" data-t="cR0" d=""></path><path class="gf-tb" data-t="cL1" d=""></path><path class="gf-tb" data-t="cR1" d=""></path><path class="gf-tb" data-t="cL2" d=""></path><path class="gf-tb" data-t="cR2" d=""></path><path class="gf-tb" data-t="cL3" d=""></path><path class="gf-tb" data-t="cR3" d=""></path></g>
+    <g><path class="gf-t2" data-t="conn0" d=""></path><path class="gf-t2" data-t="conn1" d=""></path><path class="gf-t2" data-t="top0" d=""></path><path class="gf-t2" data-t="top1" d=""></path><path class="gf-t2" data-t="serp" d=""></path><path class="gf-t2" data-t="drip0" d=""></path><path class="gf-t2" data-t="rev0" d=""></path><path class="gf-t2" data-t="rev1" d=""></path><path class="gf-t2" data-t="cL0" d=""></path><path class="gf-t2" data-t="cR0" d=""></path><path class="gf-t2" data-t="cL1" d=""></path><path class="gf-t2" data-t="cR1" d=""></path><path class="gf-t2" data-t="cL2" d=""></path><path class="gf-t2" data-t="cR2" d=""></path><path class="gf-t2" data-t="cL3" d=""></path><path class="gf-t2" data-t="cR3" d=""></path></g>
     <g><path class="gf-tm" data-t="conn0" d=""></path><path class="gf-tm" data-t="conn1" d=""></path><path class="gf-tm" data-t="top0" d=""></path><path class="gf-tm" data-t="top1" d=""></path><path class="gf-tm" data-t="serp" d=""></path><path class="gf-tm" data-t="drip0" d=""></path><path class="gf-tm" data-t="rev0" d=""></path><path class="gf-tm" data-t="rev1" d=""></path><path class="gf-tm" data-t="cL0" d=""></path><path class="gf-tm" data-t="cR0" d=""></path><path class="gf-tm" data-t="cL1" d=""></path><path class="gf-tm" data-t="cR1" d=""></path><path class="gf-tm" data-t="cL2" d=""></path><path class="gf-tm" data-t="cR2" d=""></path><path class="gf-tm" data-t="cL3" d=""></path><path class="gf-tm" data-t="cR3" d=""></path></g>
-    <g><path class="gf-th" data-t="conn0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="conn1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="top0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="top1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="serp" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="drip0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="rev0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="rev1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cL0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cR0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cL1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cR1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cL2" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cR2" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cL3" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cR3" d="" transform="translate(-0.9 -0.9)"></path></g>
+    <g><path class="gf-t4" data-t="conn0" d=""></path><path class="gf-t4" data-t="conn1" d=""></path><path class="gf-t4" data-t="top0" d=""></path><path class="gf-t4" data-t="top1" d=""></path><path class="gf-t4" data-t="serp" d=""></path><path class="gf-t4" data-t="drip0" d=""></path><path class="gf-t4" data-t="rev0" d=""></path><path class="gf-t4" data-t="rev1" d=""></path><path class="gf-t4" data-t="cL0" d=""></path><path class="gf-t4" data-t="cR0" d=""></path><path class="gf-t4" data-t="cL1" d=""></path><path class="gf-t4" data-t="cR1" d=""></path><path class="gf-t4" data-t="cL2" d=""></path><path class="gf-t4" data-t="cR2" d=""></path><path class="gf-t4" data-t="cL3" d=""></path><path class="gf-t4" data-t="cR3" d=""></path></g>
+    <g><path class="gf-th" data-t="conn0" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="conn1" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="top0" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="top1" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="serp" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="drip0" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="rev0" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="rev1" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="cL0" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="cR0" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="cL1" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="cR1" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="cL2" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="cR2" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="cL3" d="" transform="translate(-0.6 -0.7)"></path><path class="gf-th" data-t="cR3" d="" transform="translate(-0.6 -0.7)"></path></g>
     <g><circle class="gf-bulb" data-t="conn0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="conn1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="top0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="top1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="serp" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="drip0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="rev0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="rev1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cL0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cR0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cL1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cR1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cL2" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cR2" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cL3" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cR3" cx="0" cy="0" r="0"></circle></g>
-    <g data-drips="0" style="--d: 0"><g data-x="0.22" transform="translate(0 0)"><g class="gf-dr"><path d="M-8.5 0 C-3 1.5 -2.5 7.8 -2.5 16.9 C-2.5 19.4 -4.1 19.8 -4.1 21.9 A4.1 4.1 0 1 0 4.1 21.9 C4.1 19.8 2.5 19.4 2.5 16.9 C2.5 7.8 3 1.5 8.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.4" cy="20.8" rx="1.2" ry="1.7" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.57" transform="translate(0 0)"><g class="gf-dr"><path d="M-6.6 0 C-2.3 1.5 -2 4.8 -2 8.9 C-2 10.8 -3.2 11.2 -3.2 12.8 A3.2 3.2 0 1 0 3.2 12.8 C3.2 11.2 2 10.8 2 8.9 C2 4.8 2.3 1.5 6.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="12" rx="0.9" ry="1.4" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.81" transform="translate(0 0)"><g class="gf-dr"><path d="M-9.5 0 C-3.3 1.5 -2.8 10.2 -2.8 23.9 C-2.8 26.6 -4.6 27.1 -4.6 29.4 A4.6 4.6 0 1 0 4.6 29.4 C4.6 27.1 2.8 26.6 2.8 23.9 C2.8 10.2 3.3 1.5 9.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.6" cy="28.2" rx="1.3" ry="1.9" fill="#FFF8E2" opacity=".85"></ellipse></g></g></g>
-    <g data-drips="1" style="--d: 0"><g data-x="0.15" transform="translate(0 0)"><g class="gf-dr"><path d="M-7.6 0 C-2.7 1.5 -2.2 5.4 -2.2 9.9 C-2.2 12.1 -3.7 12.5 -3.7 14.3 A3.7 3.7 0 1 0 3.7 14.3 C3.7 12.5 2.2 12.1 2.2 9.9 C2.2 5.4 2.7 1.5 7.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.3" cy="13.4" rx="1" ry="1.5" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.46" transform="translate(0 0)"><g class="gf-dr"><path d="M-9.5 0 C-3.3 1.5 -2.8 9.6 -2.8 21.9 C-2.8 24.6 -4.6 25.1 -4.6 27.4 A4.6 4.6 0 1 0 4.6 27.4 C4.6 25.1 2.8 24.6 2.8 21.9 C2.8 9.6 3.3 1.5 9.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.6" cy="26.2" rx="1.3" ry="1.9" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.74" transform="translate(0 0)"><g class="gf-dr"><path d="M-6.6 0 C-2.3 1.5 -2 4.2 -2 6.9 C-2 8.8 -3.2 9.2 -3.2 10.8 A3.2 3.2 0 1 0 3.2 10.8 C3.2 9.2 2 8.8 2 6.9 C2 4.2 2.3 1.5 6.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="10" rx="0.9" ry="1.4" fill="#FFF8E2" opacity=".85"></ellipse></g></g></g>
-    <g data-drips="2" style="--d: 0"><g data-x="0.3" transform="translate(0 0)"><g class="gf-dr"><path d="M-9.5 0 C-3.3 1.5 -2.8 9 -2.8 19.9 C-2.8 22.6 -4.6 23.1 -4.6 25.4 A4.6 4.6 0 1 0 4.6 25.4 C4.6 23.1 2.8 22.6 2.8 19.9 C2.8 9 3.3 1.5 9.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.6" cy="24.2" rx="1.3" ry="1.9" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.62" transform="translate(0 0)"><g class="gf-dr"><path d="M-6.6 0 C-2.3 1.5 -2 3.6 -2 4.9 C-2 6.8 -3.2 7.2 -3.2 8.8 A3.2 3.2 0 1 0 3.2 8.8 C3.2 7.2 2 6.8 2 4.9 C2 3.6 2.3 1.5 6.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="8" rx="0.9" ry="1.4" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.88" transform="translate(0 0)"><g class="gf-dr"><path d="M-7.6 0 C-2.7 1.5 -2.2 6.6 -2.2 13.9 C-2.2 16.1 -3.7 16.5 -3.7 18.3 A3.7 3.7 0 1 0 3.7 18.3 C3.7 16.5 2.2 16.1 2.2 13.9 C2.2 6.6 2.7 1.5 7.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.3" cy="17.4" rx="1" ry="1.5" fill="#FFF8E2" opacity=".85"></ellipse></g></g></g>
-    <g data-drips="3" style="--d: 0"><g data-x="0.12" transform="translate(0 0)"><g class="gf-dr"><path d="M-6.6 0 C-2.3 1.5 -2 4.2 -2 6.9 C-2 8.8 -3.2 9.2 -3.2 10.8 A3.2 3.2 0 1 0 3.2 10.8 C3.2 9.2 2 8.8 2 6.9 C2 4.2 2.3 1.5 6.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="10" rx="0.9" ry="1.4" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.4" transform="translate(0 0)"><g class="gf-dr"><path d="M-8.5 0 C-3 1.5 -2.5 8.4 -2.5 18.9 C-2.5 21.4 -4.1 21.8 -4.1 23.9 A4.1 4.1 0 1 0 4.1 23.9 C4.1 21.8 2.5 21.4 2.5 18.9 C2.5 8.4 3 1.5 8.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.4" cy="22.8" rx="1.2" ry="1.7" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.7" transform="translate(0 0)"><g class="gf-dr"><path d="M-7.6 0 C-2.7 1.5 -2.2 6 -2.2 11.9 C-2.2 14.1 -3.7 14.5 -3.7 16.3 A3.7 3.7 0 1 0 3.7 16.3 C3.7 14.5 2.2 14.1 2.2 11.9 C2.2 6 2.7 1.5 7.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.3" cy="15.4" rx="1" ry="1.5" fill="#FFF8E2" opacity=".85"></ellipse></g></g></g>
+    <g data-drips="0" style="--d: 0"><g data-x="0.22" transform="translate(0 0)"><g class="gf-dr"><path d="M-5.2 0 C-2.9 1.2 -2.6 4.2 -2.4 7.8 L-2.4 16.9 C-2.4 19.4 -4.1 19.8 -4.1 21.9 A4.1 4.1 0 1 0 4.1 21.9 C4.1 19.8 2.4 19.4 2.4 16.9 L2.4 7.8 C2.6 4.2 2.9 1.2 5.2 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.4" cy="20.8" rx="1.2" ry="1.7" fill="#F1DC9E" opacity=".85"></ellipse></g></g><g data-x="0.57" transform="translate(0 0)"><g class="gf-dr"><path d="M-4.1 0 C-2.2 1.2 -2 2.6 -1.9 4.8 L-1.9 8.9 C-1.9 10.8 -3.2 11.2 -3.2 12.8 A3.2 3.2 0 1 0 3.2 12.8 C3.2 11.2 1.9 10.8 1.9 8.9 L1.9 4.8 C2 2.6 2.2 1.2 4.1 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="12" rx="0.9" ry="1.4" fill="#F1DC9E" opacity=".85"></ellipse></g></g><g data-x="0.81" transform="translate(0 0)"><g class="gf-dr"><path d="M-5.8 0 C-3.2 1.2 -2.8 5.4 -2.7 10.2 L-2.7 23.9 C-2.7 26.6 -4.6 27.1 -4.6 29.4 A4.6 4.6 0 1 0 4.6 29.4 C4.6 27.1 2.7 26.6 2.7 23.9 L2.7 10.2 C2.8 5.4 3.2 1.2 5.8 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.6" cy="28.2" rx="1.3" ry="1.9" fill="#F1DC9E" opacity=".85"></ellipse></g></g></g>
+    <g data-drips="1" style="--d: 0"><g data-x="0.15" transform="translate(0 0)"><g class="gf-dr"><path d="M-4.6 0 C-2.6 1.2 -2.3 2.9 -2.2 5.4 L-2.2 9.9 C-2.2 12.1 -3.7 12.5 -3.7 14.3 A3.7 3.7 0 1 0 3.7 14.3 C3.7 12.5 2.2 12.1 2.2 9.9 L2.2 5.4 C2.3 2.9 2.6 1.2 4.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.3" cy="13.4" rx="1" ry="1.5" fill="#F1DC9E" opacity=".85"></ellipse></g></g><g data-x="0.46" transform="translate(0 0)"><g class="gf-dr"><path d="M-5.8 0 C-3.2 1.2 -2.8 5.1 -2.7 9.6 L-2.7 21.9 C-2.7 24.6 -4.6 25.1 -4.6 27.4 A4.6 4.6 0 1 0 4.6 27.4 C4.6 25.1 2.7 24.6 2.7 21.9 L2.7 9.6 C2.8 5.1 3.2 1.2 5.8 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.6" cy="26.2" rx="1.3" ry="1.9" fill="#F1DC9E" opacity=".85"></ellipse></g></g><g data-x="0.74" transform="translate(0 0)"><g class="gf-dr"><path d="M-4.1 0 C-2.2 1.2 -2 2.2 -1.9 4.2 L-1.9 6.9 C-1.9 8.8 -3.2 9.2 -3.2 10.8 A3.2 3.2 0 1 0 3.2 10.8 C3.2 9.2 1.9 8.8 1.9 6.9 L1.9 4.2 C2 2.2 2.2 1.2 4.1 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="10" rx="0.9" ry="1.4" fill="#F1DC9E" opacity=".85"></ellipse></g></g></g>
+    <g data-drips="2" style="--d: 0"><g data-x="0.3" transform="translate(0 0)"><g class="gf-dr"><path d="M-5.8 0 C-3.2 1.2 -2.8 4.8 -2.7 9 L-2.7 19.9 C-2.7 22.6 -4.6 23.1 -4.6 25.4 A4.6 4.6 0 1 0 4.6 25.4 C4.6 23.1 2.7 22.6 2.7 19.9 L2.7 9 C2.8 4.8 3.2 1.2 5.8 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.6" cy="24.2" rx="1.3" ry="1.9" fill="#F1DC9E" opacity=".85"></ellipse></g></g><g data-x="0.62" transform="translate(0 0)"><g class="gf-dr"><path d="M-4.1 0 C-2.2 1.2 -2 1.9 -1.9 3.6 L-1.9 4.9 C-1.9 6.8 -3.2 7.2 -3.2 8.8 A3.2 3.2 0 1 0 3.2 8.8 C3.2 7.2 1.9 6.8 1.9 4.9 L1.9 3.6 C2 1.9 2.2 1.2 4.1 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="8" rx="0.9" ry="1.4" fill="#F1DC9E" opacity=".85"></ellipse></g></g><g data-x="0.88" transform="translate(0 0)"><g class="gf-dr"><path d="M-4.6 0 C-2.6 1.2 -2.3 3.5 -2.2 6.6 L-2.2 13.9 C-2.2 16.1 -3.7 16.5 -3.7 18.3 A3.7 3.7 0 1 0 3.7 18.3 C3.7 16.5 2.2 16.1 2.2 13.9 L2.2 6.6 C2.3 3.5 2.6 1.2 4.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.3" cy="17.4" rx="1" ry="1.5" fill="#F1DC9E" opacity=".85"></ellipse></g></g></g>
+    <g data-drips="3" style="--d: 0"><g data-x="0.12" transform="translate(0 0)"><g class="gf-dr"><path d="M-4.1 0 C-2.2 1.2 -2 2.2 -1.9 4.2 L-1.9 6.9 C-1.9 8.8 -3.2 9.2 -3.2 10.8 A3.2 3.2 0 1 0 3.2 10.8 C3.2 9.2 1.9 8.8 1.9 6.9 L1.9 4.2 C2 2.2 2.2 1.2 4.1 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="10" rx="0.9" ry="1.4" fill="#F1DC9E" opacity=".85"></ellipse></g></g><g data-x="0.4" transform="translate(0 0)"><g class="gf-dr"><path d="M-5.2 0 C-2.9 1.2 -2.6 4.5 -2.4 8.4 L-2.4 18.9 C-2.4 21.4 -4.1 21.8 -4.1 23.9 A4.1 4.1 0 1 0 4.1 23.9 C4.1 21.8 2.4 21.4 2.4 18.9 L2.4 8.4 C2.6 4.5 2.9 1.2 5.2 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.4" cy="22.8" rx="1.2" ry="1.7" fill="#F1DC9E" opacity=".85"></ellipse></g></g><g data-x="0.7" transform="translate(0 0)"><g class="gf-dr"><path d="M-4.6 0 C-2.6 1.2 -2.3 3.2 -2.2 6 L-2.2 11.9 C-2.2 14.1 -3.7 14.5 -3.7 16.3 A3.7 3.7 0 1 0 3.7 16.3 C3.7 14.5 2.2 14.1 2.2 11.9 L2.2 6 C2.3 3.2 2.6 1.2 4.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.3" cy="15.4" rx="1" ry="1.5" fill="#F1DC9E" opacity=".85"></ellipse></g></g></g>
   </svg>
 
   <nav class="gf-bar" aria-label="Быстрая запись" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; gap: 10px; padding: 12px 20px 16px; background: rgba(11, 10, 8, 0.94); border-top: 1px solid #2A2418">
@@ -501,7 +509,7 @@ class Component extends DCLogic {
     if (el) {
       el.querySelectorAll('circle[data-t]').forEach((c) => {
         const k = c.dataset.t;
-        this.tubes[k] = { ps: ['gf-tb', 'gf-tm', 'gf-th'].map((cl) => el.querySelector('path.' + cl + '[data-t="' + k + '"]')), bulb: c, len: 0, w: 0, last: -1 };
+        this.tubes[k] = { ps: ['gf-tb', 'gf-t2', 'gf-tm', 'gf-t4', 'gf-th'].map((cl) => el.querySelector('path.' + cl + '[data-t="' + k + '"]')), bulb: c, len: 0, w: 0, last: -1 };
       });
     }
   };
@@ -511,7 +519,7 @@ class Component extends DCLogic {
     if (!tb) return;
     tb.ps.forEach((p, i) => {
       p.setAttribute('d', d);
-      p.setAttribute('stroke-width', (w * [1, 0.62, 0.22][i]).toFixed(2));
+      p.setAttribute('stroke-width', (w * [1, 0.8, 0.6, 0.38, 0.14][i]).toFixed(2));
     });
     tb.len = d ? tb.ps[0].getTotalLength() : 0;
     tb.ps.forEach((p) => p.setAttribute('stroke-dasharray', tb.len.toFixed(1) + ' ' + (tb.len + 20).toFixed(1)));
@@ -533,7 +541,7 @@ class Component extends DCLogic {
       const pt = tb.ps[0].getPointAtLength(tb.len * p);
       tb.bulb.setAttribute('cx', pt.x.toFixed(1));
       tb.bulb.setAttribute('cy', pt.y.toFixed(1));
-      tb.bulb.setAttribute('r', (tb.w * 1.25).toFixed(1));
+      tb.bulb.setAttribute('r', (tb.w * 0.6).toFixed(1));
     } else {
       tb.bulb.setAttribute('r', '0');
     }
@@ -554,10 +562,15 @@ class Component extends DCLogic {
     const f = (v) => v.toFixed(1);
     const rad = 12;
     const w = mobile ? 6 : 9, wc = w;  // = диаметр потока на canvas (2 * tw)
+    // вертикаль от точки, где поток стартует в первом экране, — после подключения её рисует SVG, а canvas-поток гаснет
+    const st = this.stageEl && this.stageEl.getBoundingClientRect();
+    const sTop = st ? Math.min(y0 - 120, st.top + st.height / 2 - oy - Math.min(st.width, st.height) * 0.27 * 0.3) : y0 - 90;
+    const short = (exx, cornerX) => Math.abs(cornerX - exx) < rad * 2;
+    this.connLv = (short(ex[0], R) ? y0 : y0 - rad) - sTop;
     const conn = (exx, cornerX) => {
       const dir = cornerX < exx ? -1 : 1;
-      if (Math.abs(cornerX - exx) < rad * 2) return 'M' + f(exx) + ' ' + f(y0 - 90) + ' L' + f(exx) + ' ' + f(y0) + ' L' + f(cornerX) + ' ' + f(y0);
-      return 'M' + f(exx) + ' ' + f(y0 - 90) + ' L' + f(exx) + ' ' + f(y0 - rad) + ' Q' + f(exx) + ' ' + f(y0) + ' ' + f(exx + dir * rad) + ' ' + f(y0) + ' L' + f(cornerX) + ' ' + f(y0);
+      if (short(exx, cornerX)) return 'M' + f(exx) + ' ' + f(sTop) + ' L' + f(exx) + ' ' + f(y0) + ' L' + f(cornerX) + ' ' + f(y0);
+      return 'M' + f(exx) + ' ' + f(sTop) + ' L' + f(exx) + ' ' + f(y0 - rad) + ' Q' + f(exx) + ' ' + f(y0) + ' ' + f(exx + dir * rad) + ' ' + f(y0) + ' L' + f(cornerX) + ' ' + f(y0);
     };
     this.setTube('conn0', conn(ex[0], R), wc);
     this.setTube('conn1', conn(ex[1], L), wc);
@@ -584,30 +597,47 @@ class Component extends DCLogic {
     const end = pts[pts.length - 1];
     const ex2 = end[0], yb = end[1];
     const figs = this.revCards || [];
-    let lineY = yb + 300, lineL = 16 - ox, lineR = vw - 16 - ox;
-    if (figs.length) {
-      const sc = figs[0].parentElement;
-      const sr = sc.getBoundingClientRect();
-      const cs = getComputedStyle(sc);
-      lineY = figs[0].getBoundingClientRect().top - oy - w / 2;  // линия = верхняя кромка карточек
-      if (!this.rowL) { this.rowL = true; sc.addEventListener('scroll', () => { this.layoutT = -1e9; }, { passive: true }); }
-      lineL = sr.left - ox + parseFloat(cs.paddingLeft || '0');
-      lineR = sr.right - ox - parseFloat(cs.paddingRight || '0');
+    if (!figs.length) return;
+    const sc = figs[0].parentElement;
+    if (!this.rowL) { this.rowL = true; sc.addEventListener('scroll', () => { this.layoutT = -1e9; }, { passive: true }); }
+    const rs = figs.map((fg) => fg.getBoundingClientRect());
+    const gap = rs.length > 1 ? rs[1].left - rs[0].right : 16;
+    const posts = [rs[0].left - ox - gap / 2];
+    for (let k = 1; k < rs.length; k++) posts.push((rs[k - 1].right + rs[k].left) / 2 - ox);
+    posts.push(rs[rs.length - 1].right - ox + gap / 2);
+    const top = rs[0].top - oy - gap / 2, bot = Math.max.apply(null, rs.map((q) => q.bottom)) - oy + gap / 2;
+    const p0 = posts[0], pn = posts[posts.length - 1], midB = (p0 + pn) / 2, cr = 14;
+    // поток с прайса спускается к рамке; если на пути кнопки листания — обходит их справа
+    let dx = Math.min(Math.max(ex2, p0 + cr * 2), pn - cr * 2), dd = '';
+    const nav = this.root && this.root.querySelector('#reviews [data-rev]');
+    const nr = nav && nav.parentElement.getBoundingClientRect();
+    if (nr && nr.width && dx > nr.left - ox - 16 && dx < nr.right - ox + 16) {
+      const yM = nr.top - oy - 28, nx = nr.right - ox + 26;
+      dd = 'M' + f(ex2) + ' ' + f(yb) + ' L' + f(ex2) + ' ' + f(yM - cr) + ' Q' + f(ex2) + ' ' + f(yM) + ' ' + f(ex2 + cr) + ' ' + f(yM) +
+           ' L' + f(nx - cr) + ' ' + f(yM) + ' Q' + f(nx) + ' ' + f(yM) + ' ' + f(nx) + ' ' + f(yM + cr) + ' L' + f(nx) + ' ' + f(top);
+      dx = nx;
+    } else if (Math.abs(dx - ex2) > 1) {
+      const yM = top - 40;
+      dd = 'M' + f(ex2) + ' ' + f(yb) + ' L' + f(ex2) + ' ' + f(yM) + ' L' + f(dx) + ' ' + f(yM) + ' L' + f(dx) + ' ' + f(top);
+    } else dd = 'M' + f(ex2) + ' ' + f(yb) + ' L' + f(ex2) + ' ' + f(top);
+    this.setTube('drip0', dd, w);
+    // внешний контур: от точки падения влево/вправо по верху, вниз по краю, по низу навстречу
+    const loop = (x, dir) => 'M' + f(dx) + ' ' + f(top) + ' L' + f(x - dir * cr) + ' ' + f(top) + ' Q' + f(x) + ' ' + f(top) + ' ' + f(x) + ' ' + f(top + cr) +
+      ' L' + f(x) + ' ' + f(bot - cr) + ' Q' + f(x) + ' ' + f(bot) + ' ' + f(x - dir * cr) + ' ' + f(bot) + ' L' + f(midB) + ' ' + f(bot);
+    this.setTube('rev0', loop(p0, -1), w);
+    this.setTube('rev1', loop(pn, 1), w);
+    // стойки между карточками
+    for (let k = 0; k < 4; k++) {
+      const x = posts[k + 1];
+      this.setTube('cL' + k, k + 1 < posts.length - 1 ? 'M' + f(x) + ' ' + f(top) + ' L' + f(x) + ' ' + f(bot) : '', w);
+      this.setTube('cR' + k, '', w);
     }
-    lineR = Math.max(lineR, ex2);
-    this.setTube('drip0', 'M' + f(ex2) + ' ' + f(yb) + ' L' + f(ex2) + ' ' + f(lineY), w);
-    this.setTube('rev0', 'M' + f(ex2) + ' ' + f(lineY) + ' L' + f(lineL) + ' ' + f(lineY), w);
-    this.setTube('rev1', lineR - ex2 > 6 ? 'M' + f(ex2) + ' ' + f(lineY) + ' L' + f(lineR) + ' ' + f(lineY) : '', w);
-    // обвязка карточек: от линии вниз по бокам и по низу навстречу друг другу; капли висят снизу
-    const cr = 12;
-    figs.forEach((fg, k) => {
-      const q = fg.getBoundingClientRect();
-      const x0 = q.left - ox - w / 2, x1 = q.right - ox + w / 2, yB = q.bottom - oy + w / 2, mid = (x0 + x1) / 2;
-      this.setTube('cL' + k, 'M' + f(x0) + ' ' + f(lineY) + ' L' + f(x0) + ' ' + f(yB - cr) + ' Q' + f(x0) + ' ' + f(yB) + ' ' + f(x0 + cr) + ' ' + f(yB) + ' L' + f(mid) + ' ' + f(yB), w);
-      this.setTube('cR' + k, 'M' + f(x1) + ' ' + f(lineY) + ' L' + f(x1) + ' ' + f(yB - cr) + ' Q' + f(x1) + ' ' + f(yB) + ' ' + f(x1 - cr) + ' ' + f(yB) + ' L' + f(mid) + ' ' + f(yB), w);
+    // застывшие капли висят с нижней рейки
+    rs.forEach((q, k) => {
       const g = svg.querySelector('[data-drips="' + k + '"]');
-      if (g) g.querySelectorAll('[data-x]').forEach((d) => d.setAttribute('transform', 'translate(' + f(x0 + (x1 - x0) * parseFloat(d.dataset.x)) + ' ' + f(yB) + ')'));
+      if (g) g.querySelectorAll('[data-x]').forEach((d) => d.setAttribute('transform', 'translate(' + f(posts[k] + (posts[k + 1] - posts[k]) * parseFloat(d.dataset.x)) + ' ' + f(bot) + ')'));
     });
+    this.revTop = top;
   }
 
   onMove = (e) => {
@@ -721,7 +751,7 @@ class Component extends DCLogic {
     }
 
     const sb = ss(0.28, 0.5, b);
-    if (sb > 0) {
+    if (sb > 0 && !st.hk) {  // после подключения к прайсу потоки рисует SVG
       // streams down both edges (smooth vertical capsules)
       for (let k = 0; k < 2; k++) {
         const x = edges[k];
@@ -1010,29 +1040,28 @@ void main(){
         this.hy[k] = Math.min(this.hy[k], capY);
       }
       // 2) coat the price list
-      const pcT = pr ? c01((vh * 0.85 - pr.y) / (vh * 0.6)) : 0;
-      this.pc += (pcT - this.pc) * sm(3);
+      // этапы стартуют, когда блок виден, и доливаются по времени до конца — без застывших на полпути трубок
+      const run = (cur, on, dur) => (on ? (reduce ? 1 : Math.min(1, cur + dt / dur)) : cur);
+      // подключение к прайсу — только когда оба потока дотекли до его верха
+      const pcT = pr && pr.y < vh * 0.8 && this.hy[0] >= capY - 8 && this.hy[1] >= capY - 8 ? 1 : 0;
+      this.pc = run(this.pc, (pcT > 0 || this.pc > 0) && this.b >= 1, 2.4);
       // 3) drips from the last price row reach the reviews as they enter the screen
-      let q2T = 0;
-      if (pr && rowTop !== null) {
-        const span = (rowTop - pr.y) - vh * 0.6;
-        q2T = pcT >= 1 ? (span > 1 ? c01((vh * 0.25 - pr.y) / span) : 1) : 0;
-      }
-      this.q2 += (q2T - this.q2) * sm(4);
-      if (this.pc < 0.985) this.q2 = 0;
-      // 4) coat the reviews, leave hanging drops
-      const revT = rowTop !== null && this.q2 > 0.97 ? c01((vh * 0.85 - rowTop) / (vh * 0.2)) : 0;
-      this.rev += (revT - this.rev) * sm(3);
-      // 5) from that line the gold coats every card and leaves hanging drops
-      const coatT = rowTop !== null && this.rev > 0.97 ? c01((vh * 0.65 - rowTop) / (vh * 0.4)) : 0;
-      this.coatP = (this.coatP || 0) + (coatT - (this.coatP || 0)) * sm(2.5);
+      this.q2 = run(this.q2, this.pc >= 1 && rowTop !== null && rowTop < vh * 0.95, 0.9);
+      this.rev = run(this.rev, this.q2 >= 1, 1.3);
+      this.coatP = run(this.coatP || 0, this.rev >= 1, 1.6);
 
       // gold in the page flow (SVG + CSS): moves with the content natively, no lag while scrolling
       if (!isStatic) {
         if (now - this.layoutT > 700 || this.layVw !== vw) { this.layoutT = now; this.layVw = vw; this.layoutFlow(vw, mobile); }
         const pcv = this.b >= 1 ? this.pc : 0;
-        this.progTube('conn0', c01(pcv / 0.12));
-        this.progTube('conn1', c01(pcv / 0.12));
+        if (this.root) { this.root.classList.toggle('gf-gilded', pcv > 0.2); this.root.classList.toggle('gf-gilded-r', (this.coatP || 0) > 0.25); }
+        // вертикаль появляется сразу (она уже была потоком на canvas), дальше трубка доливается до угла прайса
+        ['conn0', 'conn1'].forEach((key) => {
+          const tb = this.tubes[key];
+          if (!tb || !tb.len) return;
+          const lv = Math.min(tb.len, Math.max(0, this.connLv || 0));
+          this.progTube(key, pcv > 0 ? (lv + (tb.len - lv) * c01(pcv / 0.12)) / tb.len : 0);
+        });
         this.progTube('top0', c01((pcv - 0.12) / 0.13));
         this.progTube('top1', c01((pcv - 0.12) / 0.13));
         this.progTube('serp', c01((pcv - 0.25) / 0.75));
@@ -1043,13 +1072,12 @@ void main(){
         const re = this.rev * this.rev * (3 - 2 * this.rev);
         if (t0 && t0.len) this.progTube('rev0', c01(re * maxL / t0.len));
         if (t1 && t1.len) this.progTube('rev1', c01(re * maxL / t1.len));
+        const ce = this.coatP, sE = (x) => x * x * (3 - 2 * x);
+        for (let k = 0; k < 4; k++) this.progTube('cL' + k, sE(c01((ce - 0.05 * k) / 0.6)));
+        const pd = sE(c01((ce - 0.55) / 0.45));
         (this.revCards || []).forEach((fg, i) => {
-          const c = c01(this.coatP * 1.2 - i * 0.04);
-          const pe = c01(c / 0.8), pd = c01((c - 0.78) / 0.22);
-          this.progTube('cL' + i, pe * pe * (3 - 2 * pe));
-          this.progTube('cR' + i, pe * pe * (3 - 2 * pe));
           const g = this.flow && this.flow.querySelector('[data-drips="' + i + '"]');
-          if (g && g._d !== pd.toFixed(3)) { g._d = pd.toFixed(3); g.style.setProperty('--d', (pd * pd * (3 - 2 * pd)).toFixed(3)); }
+          if (g && g._d !== pd.toFixed(3)) { g._d = pd.toFixed(3); g.style.setProperty('--d', pd.toFixed(3)); }
         });
       }
 
@@ -1066,7 +1094,7 @@ void main(){
       const S = this.scene({
         cx, cy, R0, b: this.b, t, vw, vh, hy: this.hy, th, pr: null, pc: 0, q2: 0, dripX: [], dripEnd: 0, cards: [],
         pokeU: (now - this.pokeT) / 900,
-        hk: this.b >= 1 && !isStatic ? c01(this.pc / 0.12) : 0
+        hk: this.b >= 1 && !isStatic && this.pc > 0 ? 1 : 0
       });
       gl.uniform2f(u.res, w, h);
       gl.uniform1f(u.scale, w / Math.max(1, el.clientWidth));
