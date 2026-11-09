@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://morozova-nails.sourcecraft.site/manic-gold/sitemap.xml
+Sitemap: https://magicalnails.ru/sitemap.xml

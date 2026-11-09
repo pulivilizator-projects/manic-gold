@@ -1,6 +1,6 @@
 # Маникюр в Кимрах — Анастасия Морозова
 
-Одностраничный сайт мастера маникюра. Статика, публикуется через SourceCraft Sites из ветки `main` (настройка в `.sourcecraft/sites.yaml`).
+Одностраничный сайт мастера маникюра. Статика, сайт https://magicalnails.ru/ — Timeweb Cloud App Platform, автодеплой из GitHub (ветка `main`). Копия: SourceCraft Sites (`.sourcecraft/sites.yaml`).
 
 - `index.html` — страница (тексты, контакты, цены, SEO-теги и разметка schema.org в `<head>`)
 - `photos/` — фотографии
@@ -10,4 +10,4 @@
 
 Кнопки ВКонтакте (3 шт., `class="gf-vk"`) пока без ссылки: добавить им `href="https://vk.com/..."`, убрать `aria-disabled` и `title`, добавить ссылку в `sameAs` в JSON-LD.
 
-При подключении своего домена заменить адрес `https://morozova-nails.sourcecraft.site/manic-gold/` в `index.html`, `robots.txt` и `sitemap.xml`.
+При смене домена заменить адрес `https://magicalnails.ru/` в `index.html`, `robots.txt` и `sitemap.xml`.
