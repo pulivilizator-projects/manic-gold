@@ -8,6 +8,8 @@
 
 Локально: `python3 -m http.server` в этой папке и открыть http://localhost:8000.
 
-Кнопки ВКонтакте (3 шт., `class="gf-vk"`) пока без ссылки: добавить им `href="https://vk.com/..."`, убрать `aria-disabled` и `title`, добавить ссылку в `sameAs` в JSON-LD.
+- `photos/works/` — фото в сетке «Работы» (01–08 — первые карточки, подписи пока «Работа N»); `photos/karusel-*` — карусель
+
+Запись: MAX и ВКонтакте; ссылки и телефон — в `index.html` (поиск по `max.ru`, `vk.ru`, `tel:`) и в JSON-LD.
 
 При смене домена заменить адрес `https://magicalnails.ru/` в `index.html`, `robots.txt` и `sitemap.xml`.
