@@ -8,4 +8,6 @@
 
 Локально: `python3 -m http.server` в этой папке и открыть http://localhost:8000.
 
+Кнопки ВКонтакте (3 шт., `class="gf-vk"`) пока без ссылки: добавить им `href="https://vk.com/..."`, убрать `aria-disabled` и `title`, добавить ссылку в `sameAs` в JSON-LD.
+
 При подключении своего домена заменить адрес `https://pulivilizator-projects.github.io/manic-gold/` в `index.html`, `robots.txt` и `sitemap.xml`.
