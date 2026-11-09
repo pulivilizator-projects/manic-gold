@@ -467,7 +467,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
         <div style="display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #B8913F">Часы</dt><dd style="margin: 0; font-size: 15px">Пн–сб, 10:00–20:00</dd></div>
       </dl>
     </div>
-    <p style="margin: 0; padding: 0 clamp(20px, 5vw, 56px) 32px; max-width: 1320px; margin-inline: auto; box-sizing: border-box; font-size: 12px; color: #7D7466">© 2026 Анастасия Морозова</p>
+    <p style="margin: 0; padding: 0 clamp(20px, 5vw, 56px) 32px; max-width: 1320px; margin-inline: auto; box-sizing: border-box; font-size: 12px; color: #7D7466">© 2026 Анастасия Морозова · <a href="./privacy.html" style="color: #A39A8A">Политика конфиденциальности</a></p>
   </footer>
 
   <svg ref="{{ setFlow }}" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: -1">
@@ -1172,6 +1172,48 @@ document.addEventListener('click', function (e) {
     setTimeout(function () { g.querySelectorAll('.gf-work').forEach(function (x) { x.style.transitionDelay = ''; }); }, 1600);
   });
   init();
+})();
+</script>
+<div id="cookie-note" role="region" aria-label="Уведомление о cookie" hidden style="position: fixed; z-index: 60; left: 12px; right: 12px; bottom: 84px; max-width: 520px; margin: 0 auto; box-sizing: border-box; padding: 16px 18px; background: #14110C; border: 1px solid #8E6B2E; color: #D8D0C2; font-family: 'Jost', system-ui, sans-serif; font-size: 14px; line-height: 1.5; box-shadow: 0 8px 30px rgba(0,0,0,.5)">
+  <p style="margin: 0 0 12px">Сайт использует cookie и Яндекс Метрику, чтобы понимать, как им пользуются. Подробнее — в <a href="./privacy.html" style="color: #E2C27F">политике конфиденциальности</a>.</p>
+  <div style="display: flex; gap: 10px">
+    <button type="button" data-cookie="yes" style="flex: 1; height: 42px; border: 0; background: linear-gradient(180deg, #E9C97F, #C49A4A); color: #0B0A08; font: 600 14px 'Jost', system-ui, sans-serif; cursor: pointer">Принять</button>
+    <button type="button" data-cookie="no" style="flex: 1; height: 42px; border: 1px solid #8E6B2E; background: transparent; color: #E2C27F; font: 500 14px 'Jost', system-ui, sans-serif; cursor: pointer">Отклонить</button>
+  </div>
+</div>
+<style>@media (min-width:760px){#cookie-note{bottom:16px!important}}</style>
+<script>
+// Яндекс Метрика 114154411: грузится только после согласия на cookie (152-ФЗ)
+(function () {
+  var ID = 114154411, KEY = 'cookie-consent';
+  function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function load() {
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) return; }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+    (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+    ym(ID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  }
+  // цели: клики по записи (MAX, ВКонтакте, телефон); capture — чтобы сработало раньше обработчиков рантайма
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a || !window.ym) return;
+    var h = a.getAttribute('href');
+    var goal = h.indexOf('tel:') === 0 ? 'click_phone' : h.indexOf('max.ru') > -1 ? 'click_max' : h.indexOf('vk.ru') > -1 ? 'click_vk' : null;
+    if (goal) ym(ID, 'reachGoal', goal);
+  }, true);
+  var note = document.getElementById('cookie-note');
+  var c = get();
+  if (c === 'yes') load();
+  else if (c !== 'no') note.hidden = false;
+  note.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-cookie]');
+    if (!b) return;
+    set(b.dataset.cookie);
+    note.hidden = true;
+    if (b.dataset.cookie === 'yes') load();
+  });
 })();
 </script>
 </body>

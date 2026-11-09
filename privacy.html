@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика конфиденциальности — Анастасия Морозова, маникюр в Кимрах</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://magicalnails.ru/privacy.html">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<style>
+body{margin:0;background:#0B0A08;color:#D8D0C2;font:300 17px/1.65 'Jost',system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:40px 20px 64px;box-sizing:border-box}
+h1{font:400 34px/1.15 'Forum',Georgia,serif;color:#E9C97F;margin:0 0 8px}
+h2{font:400 22px/1.3 'Forum',Georgia,serif;color:#E2C27F;margin:32px 0 8px}
+a{color:#E2C27F}
+p,li{margin:0 0 10px}
+.muted{color:#A39A8A;font-size:14px}
+button{height:42px;padding:0 20px;border:1px solid #8E6B2E;background:transparent;color:#E2C27F;font:500 15px 'Jost',system-ui,sans-serif;cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+<p><a href="./">← На главную</a></p>
+<h1>Политика конфиденциальности</h1>
+<p class="muted">Редакция от 10.11.2026</p>
+
+<h2>Кто обрабатывает данные</h2>
+<p>Анастасия Морозова, мастер маникюра (г. Кимры, ул. Кольцова, 48, салон LakMyss). Связаться по вопросам данных: +7 930 155-53-69.</p>
+
+<h2>Какие данные собираются</h2>
+<p>Сайт не просит вводить имя, телефон или другие личные данные. Если вы согласились на cookie, сервис Яндекс Метрика собирает обезличенные технические данные:</p>
+<ul>
+<li>файлы cookie и идентификатор браузера;</li>
+<li>IP-адрес, примерный город, тип устройства и браузера;</li>
+<li>какие страницы и кнопки вы открывали, откуда пришли на сайт.</li>
+</ul>
+<p>Если вы пишете в MAX, ВКонтакте или звоните, переписка и звонок идут уже через эти сервисы и связь, по их правилам.</p>
+
+<h2>Зачем</h2>
+<p>Чтобы понимать, сколько людей заходит на сайт, откуда и какими кнопками записи пользуются, и делать сайт удобнее. Данные не продаются и не используются для рекламы.</p>
+
+<h2>Кто ещё получает данные</h2>
+<p>ООО «Яндекс» как оператор сервиса Яндекс Метрика, по его <a href="https://yandex.ru/legal/confidential/" rel="noopener">политике конфиденциальности</a>. Данные хранятся на серверах в России.</p>
+
+<h2>Согласие и отказ</h2>
+<p>Метрика включается только после нажатия «Принять» в уведомлении о cookie. Отказаться можно в любой момент: нажмите кнопку ниже и удалите cookie сайта в настройках браузера.</p>
+<p><button type="button" id="revoke">Отозвать согласие на cookie</button> <span id="revoked" class="muted" hidden>Согласие отозвано.</span></p>
+
+<h2>Сроки и права</h2>
+<p>Статистика хранится в Яндекс Метрике не дольше, чем это нужно для целей выше, по правилам сервиса. Вы можете запросить сведения о своих данных или их удаление по телефону выше. Обработка ведётся по Федеральному закону № 152-ФЗ «О персональных данных».</p>
+</main>
+<script>
+document.getElementById('revoke').addEventListener('click', function () {
+  try { localStorage.setItem('cookie-consent', 'no'); } catch (e) {}
+  document.getElementById('revoked').hidden = false;
+});
+</script>
+</body>
+</html>
