@@ -1,6 +1,6 @@
 # Маникюр в Кимрах — Анастасия Морозова
 
-Одностраничный сайт мастера маникюра. Статика, сайт https://magicalnails.ru/ — Timeweb Cloud App Platform, автодеплой из GitHub (ветка `main`). Копия: SourceCraft Sites (`.sourcecraft/sites.yaml`).
+Одностраничный сайт мастера маникюра. Статика, сайт https://magicalnails.ru/ — Timeweb Cloud App Platform, автодеплой из GitHub (ветка `main`).
 
 - `index.html` — страница (тексты, контакты, цены, SEO-теги и разметка schema.org в `<head>`)
 - `photos/` — фотографии
