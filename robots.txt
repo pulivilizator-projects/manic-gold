@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pulivilizator-projects.github.io/manic-gold/sitemap.xml
+Sitemap: https://morozova-nails.sourcecraft.site/manic-gold/sitemap.xml
