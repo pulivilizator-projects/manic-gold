@@ -1033,10 +1033,15 @@ void main(){
       const capY = pr ? pr.y - 3 : (rowTop !== null ? rowTop - th * 2 : Infinity);
       const capTop = pr ? pr.y : rowTop;
       const q1 = capTop !== null ? c01(this.sy / Math.max(1, capTop + this.sy - yEnd)) : c01(this.sy / (vh * 3));
+      // canvas-потоки и SVG-вертикали передают друг другу эстафету только в одной и той же геометрии:
+      // капля собралась обратно (b < 1) — canvas продолжает линии с той же длины и плавно их втягивает;
+      // повторно SVG подхватывает поток, лишь когда головы снова дотекли до прайса
+      if (this.b < 1) { if (this.joined) { this.hy[0] = this.hy[1] = vh + 60; this.unjoinT = now; } this.joined = false; }
+      else if (this.pc > 0 && pr && this.hy[0] >= capY - 8 && this.hy[1] >= capY - 8) this.joined = true;
       for (let k = 0; k < 2; k++) {
         let goal = Math.min(y0v + (yEnd - y0v) * ease(q1), capY);
         if (this.b < 0.3) this.hy[k] = Math.min(goal, cy - R0 * 0.3 + (goal - (cy - R0 * 0.3)) * c01(this.b / 0.3));
-        else this.hy[k] += (goal - this.hy[k]) * sm(6);
+        else this.hy[k] += (goal - this.hy[k]) * sm(now - (this.unjoinT || -1e9) < 1400 ? 2.2 : 6);  // после отсоединения втягиваем медленнее
         this.hy[k] = Math.min(this.hy[k], capY);
       }
       // 2) coat the price list
@@ -1060,7 +1065,7 @@ void main(){
           const tb = this.tubes[key];
           if (!tb || !tb.len) return;
           const lv = Math.min(tb.len, Math.max(0, this.connLv || 0));
-          this.progTube(key, pcv > 0 ? (lv + (tb.len - lv) * c01(pcv / 0.12)) / tb.len : 0);
+          this.progTube(key, pcv > 0 && this.joined ? (lv + (tb.len - lv) * c01(pcv / 0.12)) / tb.len : 0);
         });
         this.progTube('top0', c01((pcv - 0.12) / 0.13));
         this.progTube('top1', c01((pcv - 0.12) / 0.13));
@@ -1094,7 +1099,7 @@ void main(){
       const S = this.scene({
         cx, cy, R0, b: this.b, t, vw, vh, hy: this.hy, th, pr: null, pc: 0, q2: 0, dripX: [], dripEnd: 0, cards: [],
         pokeU: (now - this.pokeT) / 900,
-        hk: this.b >= 1 && !isStatic && this.pc > 0 ? 1 : 0
+        hk: this.joined && !isStatic ? 1 : 0
       });
       gl.uniform2f(u.res, w, h);
       gl.uniform1f(u.scale, w / Math.max(1, el.clientWidth));
