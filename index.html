@@ -132,6 +132,11 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
 .gf-carousel-stage{--R:300px;height:540px}
 .gf-card{width:200px;height:270px;margin:-135px 0 0 -100px}
 }
+/* разделители не пересекают золотые потоки по краям экрана */
+#why,#works,#prices,#reviews,#contacts,.gf-root>footer,.gf-marq{--gx:14px;position:relative;border-top-color:transparent!important;border-bottom-color:transparent!important}
+@media (min-width:900px){#why,#works,#prices,#reviews,#contacts,.gf-root>footer,.gf-marq{--gx:62px}}
+#why::before,#works::before,#prices::before,#reviews::before,#contacts::before,.gf-root>footer::before,.gf-marq::before,.gf-marq::after{content:"";position:absolute;left:var(--gx);right:var(--gx);top:-1px;height:1px;background:#2A2418;pointer-events:none}
+.gf-marq::before{top:0}.gf-marq::after{top:auto;bottom:0}  /* у бегущей строки overflow:hidden — линии внутри */
 .gf-tb,.gf-tm,.gf-th{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .gf-tb{stroke:#6E5020}.gf-tm{stroke:#D4AF6A}.gf-th{stroke:#FFF3CC;opacity:.8}
 .gf-bulb{fill:url(#gfBulb)}
@@ -204,7 +209,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
     </div>
   </section>
 
-  <div aria-hidden="true" style="border-top: 1px solid #2A2418; border-bottom: 1px solid #2A2418; overflow: hidden; padding: 16px 0">
+  <div class="gf-marq" aria-hidden="true" style="border-top: 1px solid #2A2418; border-bottom: 1px solid #2A2418; overflow: hidden; padding: 16px 0">
     <div class="gf-marquee" style="display: flex; width: max-content; gap: 36px; font-family: 'Forum', Georgia, serif; font-size: clamp(22px, 2vw, 28px); letter-spacing: 0.1em; text-transform: uppercase; color: #C9A45C; white-space: nowrap">
       <span>Маникюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span><span>Маникюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span>
       <span>Маникюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span><span>Маникюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span>
@@ -347,32 +352,26 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
       <figure style="flex: 0 0 min(380px, 84%); scroll-snap-align: start; margin: 0; padding: 28px 24px; border: 1px solid #2A2418; background: linear-gradient(180deg, #14110C, #0B0A08); display: flex; flex-direction: column; gap: 16px; position: relative">
         <span class="gf-coat" aria-hidden="true"><span class="gf-goo"><i class="gf-g-top"></i><i class="gf-g-side l" style="--h: 58%; --dl: -1.2s"></i><i class="gf-g-side r" style="--h: 74%; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 14%; --h: 22px; --w: 9px; --dl: -1.0s"></i><i class="gf-g-drip" style="left: 31%; --h: 10px; --w: 7px; --dl: -2.2s"></i><i class="gf-g-drip" style="left: 47%; --h: 34px; --w: 10px; --dl: -3.3s"></i><i class="gf-g-drip" style="left: 63%; --h: 15px; --w: 8px; --dl: -1.0s"></i><i class="gf-g-drip" style="left: 80%; --h: 27px; --w: 9px; --dl: -2.2s"></i><i class="gf-g-drip" style="left: 92%; --h: 9px; --w: 7px; --dl: -3.0s"></i></span><i class="gf-gloss"></i></span>
         <span aria-hidden="true" style="font-family: 'Forum', Georgia, serif; font-size: 64px; line-height: 0.6; color: #B8913F">“</span>
-        <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Хожу к Насте второй год. Раньше после маникюра кутикула неделю заживала, здесь такого ни разу не было. А про массажёр под столом я сначала даже не поняла, что это. Потом уходить не хотелось.</blockquote>
-        <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Ольга, 52 года</figcaption>
+        <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Хожу к Насте уже почти год, до этого сменила мастеров пять, наверное. У меня тонкие ногти, вечно слоились, и везде мне всё равно пилили под ноль. Тут первый раз никто не стал спорить, что длину надо оставить, просто укрепили. Покрытие держится недели три, отрастает аккуратно. Единственное, записываться надо заранее, на субботу у неё всё забито.</blockquote>
+        <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Ольга</figcaption>
       </figure>
       <figure style="flex: 0 0 min(380px, 84%); scroll-snap-align: start; margin: 0; padding: 28px 24px; border: 1px solid #2A2418; background: linear-gradient(180deg, #14110C, #0B0A08); display: flex; flex-direction: column; gap: 16px; position: relative">
         <span class="gf-coat" aria-hidden="true"><span class="gf-goo"><i class="gf-g-top"></i><i class="gf-g-side l" style="--h: 70%; --dl: -1.2s"></i><i class="gf-g-side r" style="--h: 52%; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 9%; --h: 14px; --w: 8px; --dl: -0.6s"></i><i class="gf-g-drip" style="left: 24%; --h: 31px; --w: 10px; --dl: -1.7s"></i><i class="gf-g-drip" style="left: 42%; --h: 10px; --w: 7px; --dl: -2.9s"></i><i class="gf-g-drip" style="left: 58%; --h: 22px; --w: 9px; --dl: -0.7s"></i><i class="gf-g-drip" style="left: 76%; --h: 37px; --w: 10px; --dl: -1.9s"></i><i class="gf-g-drip" style="left: 90%; --h: 15px; --w: 8px; --dl: -2.9s"></i></span><i class="gf-gloss"></i></span>
         <span aria-hidden="true" style="font-family: 'Forum', Georgia, serif; font-size: 64px; line-height: 0.6; color: #B8913F">“</span>
-        <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Покрытие держится до следующей записи, ничего не отходит. Дизайн показала по картинке из интернета, сделала очень похоже.</blockquote>
-        <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Карина, 24 года</figcaption>
+        <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Пришла перед свадьбой сестры, хотела что-то нежное, но не совсем банальный френч. Честно, сама не знала, чего хочу, показала пару картинок из пинтереста. Настя предложила сделать молочный с тонкой линией, получилось даже лучше, чем на картинках.</blockquote>
+        <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Ирина К.</figcaption>
       </figure>
       <figure style="flex: 0 0 min(380px, 84%); scroll-snap-align: start; margin: 0; padding: 28px 24px; border: 1px solid #2A2418; background: linear-gradient(180deg, #14110C, #0B0A08); display: flex; flex-direction: column; gap: 16px; position: relative">
         <span class="gf-coat" aria-hidden="true"><span class="gf-goo"><i class="gf-g-top"></i><i class="gf-g-side l" style="--h: 64%; --dl: -1.2s"></i><i class="gf-g-side r" style="--h: 80%; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 12%; --h: 28px; --w: 10px; --dl: -0.8s"></i><i class="gf-g-drip" style="left: 29%; --h: 12px; --w: 7px; --dl: -2.0s"></i><i class="gf-g-drip" style="left: 45%; --h: 20px; --w: 9px; --dl: -3.2s"></i><i class="gf-g-drip" style="left: 61%; --h: 38px; --w: 10px; --dl: -0.9s"></i><i class="gf-g-drip" style="left: 78%; --h: 11px; --w: 7px; --dl: -2.1s"></i><i class="gf-g-drip" style="left: 91%; --h: 24px; --w: 9px; --dl: -3.0s"></i></span><i class="gf-gloss"></i></span>
         <span aria-hidden="true" style="font-family: 'Forum', Georgia, serif; font-size: 64px; line-height: 0.6; color: #B8913F">“</span>
-        <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Пришла по совету дочери. Анастасия заметила у меня что-то с ногтем на большом пальце и сказала не тянуть, сходить к дерматологу. Сходила, и правда надо было лечить. Хорошо, что сказала сразу.</blockquote>
-        <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Валентина Петровна, 64 года</figcaption>
+        <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">нормально сделали, без заусенцев и порезов, это главное) по времени около двух часов вышло с дизайном. приду ещё</blockquote>
+        <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Светлана</figcaption>
       </figure>
       <figure style="flex: 0 0 min(380px, 84%); scroll-snap-align: start; margin: 0; padding: 28px 24px; border: 1px solid #2A2418; background: linear-gradient(180deg, #14110C, #0B0A08); display: flex; flex-direction: column; gap: 16px; position: relative">
         <span class="gf-coat" aria-hidden="true"><span class="gf-goo"><i class="gf-g-top"></i><i class="gf-g-side l" style="--h: 76%; --dl: -1.2s"></i><i class="gf-g-side r" style="--h: 56%; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 10%; --h: 18px; --w: 9px; --dl: -0.7s"></i><i class="gf-g-drip" style="left: 27%; --h: 36px; --w: 10px; --dl: -1.9s"></i><i class="gf-g-drip" style="left: 44%; --h: 11px; --w: 7px; --dl: -3.1s"></i><i class="gf-g-drip" style="left: 60%; --h: 25px; --w: 9px; --dl: -0.8s"></i><i class="gf-g-drip" style="left: 77%; --h: 14px; --w: 8px; --dl: -2.0s"></i><i class="gf-g-drip" style="left: 93%; --h: 30px; --w: 10px; --dl: -3.1s"></i></span><i class="gf-gloss"></i></span>
         <span aria-hidden="true" style="font-family: 'Forum', Georgia, serif; font-size: 64px; line-height: 0.6; color: #B8913F">“</span>
-        <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Удобно, что записываюсь в MAX. Сколько написано в прайсе, столько и плачу.</blockquote>
-        <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Даша, 31 год</figcaption>
-      </figure>
-      <figure style="flex: 0 0 min(380px, 84%); scroll-snap-align: start; margin: 0; padding: 28px 24px; border: 1px solid #2A2418; background: linear-gradient(180deg, #14110C, #0B0A08); display: flex; flex-direction: column; gap: 16px; position: relative">
-        <span class="gf-coat" aria-hidden="true"><span class="gf-goo"><i class="gf-g-top"></i><i class="gf-g-side l" style="--h: 54%; --dl: -1.2s"></i><i class="gf-g-side r" style="--h: 68%; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 15%; --h: 32px; --w: 10px; --dl: -1.1s"></i><i class="gf-g-drip" style="left: 33%; --h: 14px; --w: 8px; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 50%; --h: 24px; --w: 9px; --dl: -0.1s"></i><i class="gf-g-drip" style="left: 66%; --h: 10px; --w: 7px; --dl: -1.2s"></i><i class="gf-g-drip" style="left: 82%; --h: 35px; --w: 10px; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 94%; --h: 13px; --w: 8px; --dl: -3.2s"></i></span><i class="gf-gloss"></i></span>
-        <span aria-hidden="true" style="font-family: 'Forum', Georgia, serif; font-size: 64px; line-height: 0.6; color: #B8913F">“</span>
-        <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Для меня это час, когда можно выдохнуть. Поговорим обо всём, ноги на массажёре отдыхают, выхожу с красивыми ногтями и в хорошем настроении.</blockquote>
-        <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Ирина, 45 лет</figcaption>
+        <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Первый раз решил попробовать мужской маникюр, все прошло хорошо</blockquote>
+        <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Виктор</figcaption>
       </figure>
     </div>
   </section>
@@ -480,14 +479,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
       <filter id="gfGoo" x="-10%" y="-10%" width="120%" height="140%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="4.2" result="b"></feGaussianBlur><feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9"></feColorMatrix></filter>
       <radialGradient id="gfBulb" cx=".38" cy=".32" r=".72"><stop offset="0" stop-color="#FFF6DA"></stop><stop offset=".35" stop-color="#E9C97F"></stop><stop offset="1" stop-color="#7A5A24"></stop></radialGradient>
     </defs>
-    <g data-tube="conn0"><path class="gf-tb" d=""></path><path class="gf-tm" d=""></path><path class="gf-th" d="" transform="translate(-0.9 -0.9)"></path><circle class="gf-bulb" cx="0" cy="0" r="0"></circle></g>
-    <g data-tube="conn1"><path class="gf-tb" d=""></path><path class="gf-tm" d=""></path><path class="gf-th" d="" transform="translate(-0.9 -0.9)"></path><circle class="gf-bulb" cx="0" cy="0" r="0"></circle></g>
-    <g data-tube="top0"><path class="gf-tb" d=""></path><path class="gf-tm" d=""></path><path class="gf-th" d="" transform="translate(-0.9 -0.9)"></path><circle class="gf-bulb" cx="0" cy="0" r="0"></circle></g>
-    <g data-tube="top1"><path class="gf-tb" d=""></path><path class="gf-tm" d=""></path><path class="gf-th" d="" transform="translate(-0.9 -0.9)"></path><circle class="gf-bulb" cx="0" cy="0" r="0"></circle></g>
-    <g data-tube="serp"><path class="gf-tb" d=""></path><path class="gf-tm" d=""></path><path class="gf-th" d="" transform="translate(-0.9 -0.9)"></path><circle class="gf-bulb" cx="0" cy="0" r="0"></circle></g>
-    <g data-tube="drip0"><path class="gf-tb" d=""></path><path class="gf-tm" d=""></path><path class="gf-th" d="" transform="translate(-0.9 -0.9)"></path><circle class="gf-bulb" cx="0" cy="0" r="0"></circle></g>
-    <g data-tube="rev0"><path class="gf-tb" d=""></path><path class="gf-tm" d=""></path><path class="gf-th" d="" transform="translate(-0.9 -0.9)"></path><circle class="gf-bulb" cx="0" cy="0" r="0"></circle></g>
-    <g data-tube="rev1"><path class="gf-tb" d=""></path><path class="gf-tm" d=""></path><path class="gf-th" d="" transform="translate(-0.9 -0.9)"></path><circle class="gf-bulb" cx="0" cy="0" r="0"></circle></g>
+    <g><path class="gf-tb" data-t="conn0" d=""></path><path class="gf-tb" data-t="conn1" d=""></path><path class="gf-tb" data-t="top0" d=""></path><path class="gf-tb" data-t="top1" d=""></path><path class="gf-tb" data-t="serp" d=""></path><path class="gf-tb" data-t="drip0" d=""></path><path class="gf-tb" data-t="rev0" d=""></path><path class="gf-tb" data-t="rev1" d=""></path></g>
+    <g><path class="gf-tm" data-t="conn0" d=""></path><path class="gf-tm" data-t="conn1" d=""></path><path class="gf-tm" data-t="top0" d=""></path><path class="gf-tm" data-t="top1" d=""></path><path class="gf-tm" data-t="serp" d=""></path><path class="gf-tm" data-t="drip0" d=""></path><path class="gf-tm" data-t="rev0" d=""></path><path class="gf-tm" data-t="rev1" d=""></path></g>
+    <g><path class="gf-th" data-t="conn0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="conn1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="top0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="top1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="serp" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="drip0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="rev0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="rev1" d="" transform="translate(-0.9 -0.9)"></path></g>
+    <g><circle class="gf-bulb" data-t="conn0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="conn1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="top0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="top1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="serp" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="drip0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="rev0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="rev1" cx="0" cy="0" r="0"></circle></g>
   </svg>
 
   <nav class="gf-bar" aria-label="Быстрая запись" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; gap: 10px; padding: 12px 20px 16px; background: rgba(11, 10, 8, 0.94); border-top: 1px solid #2A2418">
@@ -510,8 +505,9 @@ class Component extends DCLogic {
     this.flow = el;
     this.tubes = {};
     if (el) {
-      el.querySelectorAll('[data-tube]').forEach((g) => {
-        this.tubes[g.dataset.tube] = { ps: Array.from(g.querySelectorAll('path')), bulb: g.querySelector('circle'), len: 0, w: 0, last: -1 };
+      el.querySelectorAll('circle[data-t]').forEach((c) => {
+        const k = c.dataset.t;
+        this.tubes[k] = { ps: ['gf-tb', 'gf-tm', 'gf-th'].map((cl) => el.querySelector('path.' + cl + '[data-t="' + k + '"]')), bulb: c, len: 0, w: 0, last: -1 };
       });
     }
   };
@@ -563,7 +559,7 @@ class Component extends DCLogic {
     const ex = mobile ? [vw - 6 - ox, 6 - ox] : [vw - 36 - ox, 36 - ox];
     const f = (v) => v.toFixed(1);
     const rad = 12;
-    const w = mobile ? 4 : 5, wc = mobile ? 6 : 9;
+    const w = mobile ? 6 : 9, wc = w;  // = диаметр потока на canvas (2 * tw)
     const conn = (exx, cornerX) => {
       const dir = cornerX < exx ? -1 : 1;
       if (Math.abs(cornerX - exx) < rad * 2) return 'M' + f(exx) + ' ' + f(y0 - 90) + ' L' + f(exx) + ' ' + f(y0) + ' L' + f(cornerX) + ' ' + f(y0);
@@ -688,7 +684,7 @@ class Component extends DCLogic {
     const caps = (ax, ay, bx, by, r) => { if (r >= 0.5 && Ar.length < 12) { A.push(ax, ay, bx, by); Ar.push(r); } };
     const mobile = st.vw < 900;
     const edges = mobile ? [st.vw - 6, 6] : [st.vw - 36, 36];
-    const tw = mobile ? Math.max(2.8, R0 * 0.045) : Math.max(3.6, R0 * 0.065);
+    const tw = mobile ? 3 : 4.5;  // радиус потока; диаметр совпадает с SVG-трубками (layoutFlow)
     const topY = cy - R0 * 0.3;
     const antic = b < 0.12 ? 1 + 0.18 * Math.sin(Math.PI * b / 0.12) : 1;
     const blobScale = antic * (1 - ss(0.1, 0.2, b));
@@ -728,7 +724,7 @@ class Component extends DCLogic {
         const head = Math.max(topY, st.hy[k]);
         const y0 = Math.max(topY, -80);
         caps(x, y0, x, head, tw * sb);
-        circ(x, head + tw * 0.4, tw * 1.9 * sb * (1 + 0.05 * Math.sin(t * 2 + k)));
+        circ(x, head + tw * 0.4 * (1 - st.hk), tw * (1.9 - 0.9 * st.hk) * sb * (1 + 0.05 * (1 - st.hk) * Math.sin(t * 2 + k)));
         if (topY > -80) circ(x, topY, tw * 2.3 * ss(0.28, 0.42, b));
       }
       // the price list: liquid runs from the edges onto its top corners, then coats it
@@ -1068,7 +1064,8 @@ void main(){
       this.cleared = false;
       const S = this.scene({
         cx, cy, R0, b: this.b, t, vw, vh, hy: this.hy, th, pr: null, pc: 0, q2: 0, dripX: [], dripEnd: 0, cards: [],
-        pokeU: (now - this.pokeT) / 900
+        pokeU: (now - this.pokeT) / 900,
+        hk: this.b >= 1 && !isStatic ? c01(this.pc / 0.12) : 0
       });
       gl.uniform2f(u.res, w, h);
       gl.uniform1f(u.scale, w / Math.max(1, el.clientWidth));
