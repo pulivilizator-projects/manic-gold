@@ -140,19 +140,9 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
 .gf-tb,.gf-tm,.gf-th{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .gf-tb{stroke:#6E5020}.gf-tm{stroke:#D4AF6A}.gf-th{stroke:#FFF3CC;opacity:.8}
 .gf-bulb{fill:url(#gfBulb)}
-.gf-coat{position:absolute;inset:-5px;pointer-events:none;--a:0;--b:0;--cc:0;--d:0;--ox:50%}
-/* густое золото: фигуры сливаются через SVG-фильтр #gfGoo (размытие + порог альфы) */
-.gf-goo{position:absolute;inset:-14px -14px -40px;filter:url(#gfGoo) drop-shadow(0 3px 3px rgba(0,0,0,.55))}
-.gf-goo i{position:absolute;display:block;border-radius:999px;background:linear-gradient(180deg,#FFF1C4 0%,#EBC97C 22%,#C99B4A 58%,#8A6328 100%)}
-.gf-g-top{left:12px;right:12px;top:10px;height:15px;border-radius:8px;transform:scaleX(var(--a));transform-origin:var(--ox) 50%;background:linear-gradient(180deg,#FFF3CC,#E9C97F 35%,#B8913F 80%,#8A6328)!important}
-.gf-g-drip{top:16px;width:var(--w);margin-left:calc(var(--w) / -2);height:calc(8px + var(--d) * var(--h))}
-.gf-g-drip::after,.gf-g-side::after{content:'';position:absolute;left:50%;bottom:-3px;width:calc(100% + 5px);aspect-ratio:1/1.1;translate:-50% 0;border-radius:50%;background:#B58A3E;animation:gf-sway 3.4s ease-in-out infinite;animation-delay:var(--dl,0s)}
-.gf-g-side{top:14px;width:11px;height:calc(10px + var(--b) * var(--h))}
-.gf-g-side.l{left:13px}.gf-g-side.r{right:13px}
-.gf-g-side::after{width:17px}
-.gf-gloss{position:absolute;left:4%;right:4%;top:1px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,rgba(255,250,232,.85) 18%,rgba(255,250,232,.55) 60%,transparent);transform:scaleX(var(--a));transform-origin:var(--ox) 50%;filter:blur(.4px)}
-@keyframes gf-sway{0%,100%{translate:-50% 0}50%{translate:-50% 3px}}
-@media (prefers-reduced-motion:reduce){.gf-g-drip::after,.gf-g-side::after{animation:none}}
+/* застывшие капли под отзывами (SVG в общем слое золота) */
+.gf-dr{--k:1.15;transform:scale(calc(var(--d,0) * var(--k)));transform-origin:0 0}
+@media (min-width:900px){.gf-dr{--k:1.5}}
 @media (prefers-reduced-motion:reduce){.gf-gold,.gf-ring-a,.gf-ring-b,.gf-marquee,.gf-shine,.gf-carousel,.gf-glow,.gf-pulse{animation:none}.gf-js [data-reveal]{opacity:1;transform:none;transition:none}}
 </style>
 </helmet>
@@ -350,25 +340,25 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
     </div>
     <div data-rev-row="" style="margin-top: 36px; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 14px max(clamp(20px, 5vw, 56px), calc((100% - 1320px) / 2 + clamp(20px, 5vw, 56px))) 56px; scroll-padding-inline: max(clamp(20px, 5vw, 56px), calc((100% - 1320px) / 2 + clamp(20px, 5vw, 56px))); scrollbar-width: thin; scrollbar-color: #8E6B2E transparent">
       <figure style="flex: 0 0 min(380px, 84%); scroll-snap-align: start; margin: 0; padding: 28px 24px; border: 1px solid #2A2418; background: linear-gradient(180deg, #14110C, #0B0A08); display: flex; flex-direction: column; gap: 16px; position: relative">
-        <span class="gf-coat" aria-hidden="true"><span class="gf-goo"><i class="gf-g-top"></i><i class="gf-g-side l" style="--h: 58%; --dl: -1.2s"></i><i class="gf-g-side r" style="--h: 74%; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 14%; --h: 22px; --w: 9px; --dl: -1.0s"></i><i class="gf-g-drip" style="left: 31%; --h: 10px; --w: 7px; --dl: -2.2s"></i><i class="gf-g-drip" style="left: 47%; --h: 34px; --w: 10px; --dl: -3.3s"></i><i class="gf-g-drip" style="left: 63%; --h: 15px; --w: 8px; --dl: -1.0s"></i><i class="gf-g-drip" style="left: 80%; --h: 27px; --w: 9px; --dl: -2.2s"></i><i class="gf-g-drip" style="left: 92%; --h: 9px; --w: 7px; --dl: -3.0s"></i></span><i class="gf-gloss"></i></span>
+        
         <span aria-hidden="true" style="font-family: 'Forum', Georgia, serif; font-size: 64px; line-height: 0.6; color: #B8913F">“</span>
         <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Хожу к Насте уже почти год, до этого сменила мастеров пять, наверное. У меня тонкие ногти, вечно слоились, и везде мне всё равно пилили под ноль. Тут первый раз никто не стал спорить, что длину надо оставить, просто укрепили. Покрытие держится недели три, отрастает аккуратно. Единственное, записываться надо заранее, на субботу у неё всё забито.</blockquote>
         <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Ольга</figcaption>
       </figure>
       <figure style="flex: 0 0 min(380px, 84%); scroll-snap-align: start; margin: 0; padding: 28px 24px; border: 1px solid #2A2418; background: linear-gradient(180deg, #14110C, #0B0A08); display: flex; flex-direction: column; gap: 16px; position: relative">
-        <span class="gf-coat" aria-hidden="true"><span class="gf-goo"><i class="gf-g-top"></i><i class="gf-g-side l" style="--h: 70%; --dl: -1.2s"></i><i class="gf-g-side r" style="--h: 52%; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 9%; --h: 14px; --w: 8px; --dl: -0.6s"></i><i class="gf-g-drip" style="left: 24%; --h: 31px; --w: 10px; --dl: -1.7s"></i><i class="gf-g-drip" style="left: 42%; --h: 10px; --w: 7px; --dl: -2.9s"></i><i class="gf-g-drip" style="left: 58%; --h: 22px; --w: 9px; --dl: -0.7s"></i><i class="gf-g-drip" style="left: 76%; --h: 37px; --w: 10px; --dl: -1.9s"></i><i class="gf-g-drip" style="left: 90%; --h: 15px; --w: 8px; --dl: -2.9s"></i></span><i class="gf-gloss"></i></span>
+        
         <span aria-hidden="true" style="font-family: 'Forum', Georgia, serif; font-size: 64px; line-height: 0.6; color: #B8913F">“</span>
         <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Пришла перед свадьбой сестры, хотела что-то нежное, но не совсем банальный френч. Честно, сама не знала, чего хочу, показала пару картинок из пинтереста. Настя предложила сделать молочный с тонкой линией, получилось даже лучше, чем на картинках.</blockquote>
         <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Ирина К.</figcaption>
       </figure>
       <figure style="flex: 0 0 min(380px, 84%); scroll-snap-align: start; margin: 0; padding: 28px 24px; border: 1px solid #2A2418; background: linear-gradient(180deg, #14110C, #0B0A08); display: flex; flex-direction: column; gap: 16px; position: relative">
-        <span class="gf-coat" aria-hidden="true"><span class="gf-goo"><i class="gf-g-top"></i><i class="gf-g-side l" style="--h: 64%; --dl: -1.2s"></i><i class="gf-g-side r" style="--h: 80%; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 12%; --h: 28px; --w: 10px; --dl: -0.8s"></i><i class="gf-g-drip" style="left: 29%; --h: 12px; --w: 7px; --dl: -2.0s"></i><i class="gf-g-drip" style="left: 45%; --h: 20px; --w: 9px; --dl: -3.2s"></i><i class="gf-g-drip" style="left: 61%; --h: 38px; --w: 10px; --dl: -0.9s"></i><i class="gf-g-drip" style="left: 78%; --h: 11px; --w: 7px; --dl: -2.1s"></i><i class="gf-g-drip" style="left: 91%; --h: 24px; --w: 9px; --dl: -3.0s"></i></span><i class="gf-gloss"></i></span>
+        
         <span aria-hidden="true" style="font-family: 'Forum', Georgia, serif; font-size: 64px; line-height: 0.6; color: #B8913F">“</span>
         <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">нормально сделали, без заусенцев и порезов, это главное) по времени около двух часов вышло с дизайном. приду ещё</blockquote>
         <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Светлана</figcaption>
       </figure>
       <figure style="flex: 0 0 min(380px, 84%); scroll-snap-align: start; margin: 0; padding: 28px 24px; border: 1px solid #2A2418; background: linear-gradient(180deg, #14110C, #0B0A08); display: flex; flex-direction: column; gap: 16px; position: relative">
-        <span class="gf-coat" aria-hidden="true"><span class="gf-goo"><i class="gf-g-top"></i><i class="gf-g-side l" style="--h: 76%; --dl: -1.2s"></i><i class="gf-g-side r" style="--h: 56%; --dl: -2.3s"></i><i class="gf-g-drip" style="left: 10%; --h: 18px; --w: 9px; --dl: -0.7s"></i><i class="gf-g-drip" style="left: 27%; --h: 36px; --w: 10px; --dl: -1.9s"></i><i class="gf-g-drip" style="left: 44%; --h: 11px; --w: 7px; --dl: -3.1s"></i><i class="gf-g-drip" style="left: 60%; --h: 25px; --w: 9px; --dl: -0.8s"></i><i class="gf-g-drip" style="left: 77%; --h: 14px; --w: 8px; --dl: -2.0s"></i><i class="gf-g-drip" style="left: 93%; --h: 30px; --w: 10px; --dl: -3.1s"></i></span><i class="gf-gloss"></i></span>
+        
         <span aria-hidden="true" style="font-family: 'Forum', Georgia, serif; font-size: 64px; line-height: 0.6; color: #B8913F">“</span>
         <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Первый раз решил попробовать мужской маникюр, все прошло хорошо</blockquote>
         <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Виктор</figcaption>
@@ -476,13 +466,17 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
 
   <svg ref="{{ setFlow }}" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: -1">
     <defs>
-      <filter id="gfGoo" x="-10%" y="-10%" width="120%" height="140%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="4.2" result="b"></feGaussianBlur><feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9"></feColorMatrix></filter>
+      <linearGradient id="gfDrip" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#6E5020"></stop><stop offset=".22" stop-color="#B8913F"></stop><stop offset=".42" stop-color="#FFF3CC"></stop><stop offset=".58" stop-color="#E9C97F"></stop><stop offset=".8" stop-color="#A47B33"></stop><stop offset="1" stop-color="#6E5020"></stop></linearGradient>
       <radialGradient id="gfBulb" cx=".38" cy=".32" r=".72"><stop offset="0" stop-color="#FFF6DA"></stop><stop offset=".35" stop-color="#E9C97F"></stop><stop offset="1" stop-color="#7A5A24"></stop></radialGradient>
     </defs>
-    <g><path class="gf-tb" data-t="conn0" d=""></path><path class="gf-tb" data-t="conn1" d=""></path><path class="gf-tb" data-t="top0" d=""></path><path class="gf-tb" data-t="top1" d=""></path><path class="gf-tb" data-t="serp" d=""></path><path class="gf-tb" data-t="drip0" d=""></path><path class="gf-tb" data-t="rev0" d=""></path><path class="gf-tb" data-t="rev1" d=""></path></g>
-    <g><path class="gf-tm" data-t="conn0" d=""></path><path class="gf-tm" data-t="conn1" d=""></path><path class="gf-tm" data-t="top0" d=""></path><path class="gf-tm" data-t="top1" d=""></path><path class="gf-tm" data-t="serp" d=""></path><path class="gf-tm" data-t="drip0" d=""></path><path class="gf-tm" data-t="rev0" d=""></path><path class="gf-tm" data-t="rev1" d=""></path></g>
-    <g><path class="gf-th" data-t="conn0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="conn1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="top0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="top1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="serp" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="drip0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="rev0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="rev1" d="" transform="translate(-0.9 -0.9)"></path></g>
-    <g><circle class="gf-bulb" data-t="conn0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="conn1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="top0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="top1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="serp" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="drip0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="rev0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="rev1" cx="0" cy="0" r="0"></circle></g>
+    <g><path class="gf-tb" data-t="conn0" d=""></path><path class="gf-tb" data-t="conn1" d=""></path><path class="gf-tb" data-t="top0" d=""></path><path class="gf-tb" data-t="top1" d=""></path><path class="gf-tb" data-t="serp" d=""></path><path class="gf-tb" data-t="drip0" d=""></path><path class="gf-tb" data-t="rev0" d=""></path><path class="gf-tb" data-t="rev1" d=""></path><path class="gf-tb" data-t="cL0" d=""></path><path class="gf-tb" data-t="cR0" d=""></path><path class="gf-tb" data-t="cL1" d=""></path><path class="gf-tb" data-t="cR1" d=""></path><path class="gf-tb" data-t="cL2" d=""></path><path class="gf-tb" data-t="cR2" d=""></path><path class="gf-tb" data-t="cL3" d=""></path><path class="gf-tb" data-t="cR3" d=""></path></g>
+    <g><path class="gf-tm" data-t="conn0" d=""></path><path class="gf-tm" data-t="conn1" d=""></path><path class="gf-tm" data-t="top0" d=""></path><path class="gf-tm" data-t="top1" d=""></path><path class="gf-tm" data-t="serp" d=""></path><path class="gf-tm" data-t="drip0" d=""></path><path class="gf-tm" data-t="rev0" d=""></path><path class="gf-tm" data-t="rev1" d=""></path><path class="gf-tm" data-t="cL0" d=""></path><path class="gf-tm" data-t="cR0" d=""></path><path class="gf-tm" data-t="cL1" d=""></path><path class="gf-tm" data-t="cR1" d=""></path><path class="gf-tm" data-t="cL2" d=""></path><path class="gf-tm" data-t="cR2" d=""></path><path class="gf-tm" data-t="cL3" d=""></path><path class="gf-tm" data-t="cR3" d=""></path></g>
+    <g><path class="gf-th" data-t="conn0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="conn1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="top0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="top1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="serp" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="drip0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="rev0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="rev1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cL0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cR0" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cL1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cR1" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cL2" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cR2" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cL3" d="" transform="translate(-0.9 -0.9)"></path><path class="gf-th" data-t="cR3" d="" transform="translate(-0.9 -0.9)"></path></g>
+    <g><circle class="gf-bulb" data-t="conn0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="conn1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="top0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="top1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="serp" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="drip0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="rev0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="rev1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cL0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cR0" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cL1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cR1" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cL2" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cR2" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cL3" cx="0" cy="0" r="0"></circle><circle class="gf-bulb" data-t="cR3" cx="0" cy="0" r="0"></circle></g>
+    <g data-drips="0" style="--d: 0"><g data-x="0.22" transform="translate(0 0)"><g class="gf-dr"><path d="M-8.5 0 C-3 1.5 -2.5 7.8 -2.5 16.9 C-2.5 19.4 -4.1 19.8 -4.1 21.9 A4.1 4.1 0 1 0 4.1 21.9 C4.1 19.8 2.5 19.4 2.5 16.9 C2.5 7.8 3 1.5 8.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.4" cy="20.8" rx="1.2" ry="1.7" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.57" transform="translate(0 0)"><g class="gf-dr"><path d="M-6.6 0 C-2.3 1.5 -2 4.8 -2 8.9 C-2 10.8 -3.2 11.2 -3.2 12.8 A3.2 3.2 0 1 0 3.2 12.8 C3.2 11.2 2 10.8 2 8.9 C2 4.8 2.3 1.5 6.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="12" rx="0.9" ry="1.4" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.81" transform="translate(0 0)"><g class="gf-dr"><path d="M-9.5 0 C-3.3 1.5 -2.8 10.2 -2.8 23.9 C-2.8 26.6 -4.6 27.1 -4.6 29.4 A4.6 4.6 0 1 0 4.6 29.4 C4.6 27.1 2.8 26.6 2.8 23.9 C2.8 10.2 3.3 1.5 9.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.6" cy="28.2" rx="1.3" ry="1.9" fill="#FFF8E2" opacity=".85"></ellipse></g></g></g>
+    <g data-drips="1" style="--d: 0"><g data-x="0.15" transform="translate(0 0)"><g class="gf-dr"><path d="M-7.6 0 C-2.7 1.5 -2.2 5.4 -2.2 9.9 C-2.2 12.1 -3.7 12.5 -3.7 14.3 A3.7 3.7 0 1 0 3.7 14.3 C3.7 12.5 2.2 12.1 2.2 9.9 C2.2 5.4 2.7 1.5 7.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.3" cy="13.4" rx="1" ry="1.5" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.46" transform="translate(0 0)"><g class="gf-dr"><path d="M-9.5 0 C-3.3 1.5 -2.8 9.6 -2.8 21.9 C-2.8 24.6 -4.6 25.1 -4.6 27.4 A4.6 4.6 0 1 0 4.6 27.4 C4.6 25.1 2.8 24.6 2.8 21.9 C2.8 9.6 3.3 1.5 9.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.6" cy="26.2" rx="1.3" ry="1.9" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.74" transform="translate(0 0)"><g class="gf-dr"><path d="M-6.6 0 C-2.3 1.5 -2 4.2 -2 6.9 C-2 8.8 -3.2 9.2 -3.2 10.8 A3.2 3.2 0 1 0 3.2 10.8 C3.2 9.2 2 8.8 2 6.9 C2 4.2 2.3 1.5 6.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="10" rx="0.9" ry="1.4" fill="#FFF8E2" opacity=".85"></ellipse></g></g></g>
+    <g data-drips="2" style="--d: 0"><g data-x="0.3" transform="translate(0 0)"><g class="gf-dr"><path d="M-9.5 0 C-3.3 1.5 -2.8 9 -2.8 19.9 C-2.8 22.6 -4.6 23.1 -4.6 25.4 A4.6 4.6 0 1 0 4.6 25.4 C4.6 23.1 2.8 22.6 2.8 19.9 C2.8 9 3.3 1.5 9.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.6" cy="24.2" rx="1.3" ry="1.9" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.62" transform="translate(0 0)"><g class="gf-dr"><path d="M-6.6 0 C-2.3 1.5 -2 3.6 -2 4.9 C-2 6.8 -3.2 7.2 -3.2 8.8 A3.2 3.2 0 1 0 3.2 8.8 C3.2 7.2 2 6.8 2 4.9 C2 3.6 2.3 1.5 6.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="8" rx="0.9" ry="1.4" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.88" transform="translate(0 0)"><g class="gf-dr"><path d="M-7.6 0 C-2.7 1.5 -2.2 6.6 -2.2 13.9 C-2.2 16.1 -3.7 16.5 -3.7 18.3 A3.7 3.7 0 1 0 3.7 18.3 C3.7 16.5 2.2 16.1 2.2 13.9 C2.2 6.6 2.7 1.5 7.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.3" cy="17.4" rx="1" ry="1.5" fill="#FFF8E2" opacity=".85"></ellipse></g></g></g>
+    <g data-drips="3" style="--d: 0"><g data-x="0.12" transform="translate(0 0)"><g class="gf-dr"><path d="M-6.6 0 C-2.3 1.5 -2 4.2 -2 6.9 C-2 8.8 -3.2 9.2 -3.2 10.8 A3.2 3.2 0 1 0 3.2 10.8 C3.2 9.2 2 8.8 2 6.9 C2 4.2 2.3 1.5 6.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.1" cy="10" rx="0.9" ry="1.4" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.4" transform="translate(0 0)"><g class="gf-dr"><path d="M-8.5 0 C-3 1.5 -2.5 8.4 -2.5 18.9 C-2.5 21.4 -4.1 21.8 -4.1 23.9 A4.1 4.1 0 1 0 4.1 23.9 C4.1 21.8 2.5 21.4 2.5 18.9 C2.5 8.4 3 1.5 8.5 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.4" cy="22.8" rx="1.2" ry="1.7" fill="#FFF8E2" opacity=".85"></ellipse></g></g><g data-x="0.7" transform="translate(0 0)"><g class="gf-dr"><path d="M-7.6 0 C-2.7 1.5 -2.2 6 -2.2 11.9 C-2.2 14.1 -3.7 14.5 -3.7 16.3 A3.7 3.7 0 1 0 3.7 16.3 C3.7 14.5 2.2 14.1 2.2 11.9 C2.2 6 2.7 1.5 7.6 0Z" fill="url(#gfDrip)"></path><ellipse cx="-1.3" cy="15.4" rx="1" ry="1.5" fill="#FFF8E2" opacity=".85"></ellipse></g></g></g>
   </svg>
 
   <nav class="gf-bar" aria-label="Быстрая запись" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; gap: 10px; padding: 12px 20px 16px; background: rgba(11, 10, 8, 0.94); border-top: 1px solid #2A2418">
@@ -595,7 +589,8 @@ class Component extends DCLogic {
       const sc = figs[0].parentElement;
       const sr = sc.getBoundingClientRect();
       const cs = getComputedStyle(sc);
-      lineY = figs[0].getBoundingClientRect().top - oy - 12;
+      lineY = figs[0].getBoundingClientRect().top - oy - w / 2;  // линия = верхняя кромка карточек
+      if (!this.rowL) { this.rowL = true; sc.addEventListener('scroll', () => { this.layoutT = -1e9; }, { passive: true }); }
       lineL = sr.left - ox + parseFloat(cs.paddingLeft || '0');
       lineR = sr.right - ox - parseFloat(cs.paddingRight || '0');
     }
@@ -603,6 +598,16 @@ class Component extends DCLogic {
     this.setTube('drip0', 'M' + f(ex2) + ' ' + f(yb) + ' L' + f(ex2) + ' ' + f(lineY), w);
     this.setTube('rev0', 'M' + f(ex2) + ' ' + f(lineY) + ' L' + f(lineL) + ' ' + f(lineY), w);
     this.setTube('rev1', lineR - ex2 > 6 ? 'M' + f(ex2) + ' ' + f(lineY) + ' L' + f(lineR) + ' ' + f(lineY) : '', w);
+    // обвязка карточек: от линии вниз по бокам и по низу навстречу друг другу; капли висят снизу
+    const cr = 12;
+    figs.forEach((fg, k) => {
+      const q = fg.getBoundingClientRect();
+      const x0 = q.left - ox - w / 2, x1 = q.right - ox + w / 2, yB = q.bottom - oy + w / 2, mid = (x0 + x1) / 2;
+      this.setTube('cL' + k, 'M' + f(x0) + ' ' + f(lineY) + ' L' + f(x0) + ' ' + f(yB - cr) + ' Q' + f(x0) + ' ' + f(yB) + ' ' + f(x0 + cr) + ' ' + f(yB) + ' L' + f(mid) + ' ' + f(yB), w);
+      this.setTube('cR' + k, 'M' + f(x1) + ' ' + f(lineY) + ' L' + f(x1) + ' ' + f(yB - cr) + ' Q' + f(x1) + ' ' + f(yB) + ' ' + f(x1 - cr) + ' ' + f(yB) + ' L' + f(mid) + ' ' + f(yB), w);
+      const g = svg.querySelector('[data-drips="' + k + '"]');
+      if (g) g.querySelectorAll('[data-x]').forEach((d) => d.setAttribute('transform', 'translate(' + f(x0 + (x1 - x0) * parseFloat(d.dataset.x)) + ' ' + f(yB) + ')'));
+    });
   }
 
   onMove = (e) => {
@@ -629,7 +634,6 @@ class Component extends DCLogic {
       el.classList.add('gf-js');
       this.revCards = Array.from(el.querySelectorAll('#reviews figure'));
       this.priceEl = el.querySelector('#prices ul');
-      this.coats = Array.from(el.querySelectorAll('#reviews .gf-coat'));
       this.initReveal(el);
       document.addEventListener('scroll', this.onScroll, { passive: true, capture: true });
       window.addEventListener('resize', this.onScroll);
@@ -1039,16 +1043,13 @@ void main(){
         const re = this.rev * this.rev * (3 - 2 * this.rev);
         if (t0 && t0.len) this.progTube('rev0', c01(re * maxL / t0.len));
         if (t1 && t1.len) this.progTube('rev1', c01(re * maxL / t1.len));
-        this.coats.forEach((coat, i) => {
+        (this.revCards || []).forEach((fg, i) => {
           const c = c01(this.coatP * 1.2 - i * 0.04);
-          const v = [c01(c / 0.25), c01((c - 0.15) / 0.45), c01((c - 0.6) / 0.25), c01((c - 0.75) / 0.25)];
-          const key = v.map((x) => x.toFixed(3)).join(',');
-          if (coat._v === key) return;
-          coat._v = key;
-          coat.style.setProperty('--a', v[0].toFixed(3));
-          coat.style.setProperty('--b', v[1].toFixed(3));
-          coat.style.setProperty('--cc', v[2].toFixed(3));
-          coat.style.setProperty('--d', v[3].toFixed(3));
+          const pe = c01(c / 0.8), pd = c01((c - 0.78) / 0.22);
+          this.progTube('cL' + i, pe * pe * (3 - 2 * pe));
+          this.progTube('cR' + i, pe * pe * (3 - 2 * pe));
+          const g = this.flow && this.flow.querySelector('[data-drips="' + i + '"]');
+          if (g && g._d !== pd.toFixed(3)) { g._d = pd.toFixed(3); g.style.setProperty('--d', (pd * pd * (3 - 2 * pd)).toFixed(3)); }
         });
       }
 
