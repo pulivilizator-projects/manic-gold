@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://magicalnails.ru/</loc>
     <lastmod>2026-11-11</lastmod>
+    <image:image><image:loc>https://magicalnails.ru/photos/anastasia-morozova-master-manikyura-kimry.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/kabinet-manikyura-salon-lakmyss-kimry.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/karusel-1-nezhno-rozovyy-mindal-s-serdechkami.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/karusel-2-chernyy-matovyy-kvadrat-s-glyantsevym-frenchem.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/karusel-3-nyudovyy-matovyy-mindal-s-belymi-volnami.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/karusel-4-rozovoe-ombre-na-mindale.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/karusel-5-molochnyy-mindal-s-rozovymi-khlopyami.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/karusel-6-krasnyy-matovyy-mindal-s-serdechkami.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/karusel-7-klassicheskiy-french-na-kvadrate.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/karusel-8-nezhno-rozovyy-matovyy-na-korotkikh-nogtyakh.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/01-odnotonnoe-pokrytie.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/02-french.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/03-klassicheskiy-french.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/04-koshachiy-glaz.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/05-french-so-stirkoy.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/06-ukreplenie-gelem.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/07-odnotonnoe-pokrytie.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/08-leopard-na-koshachem-glaze.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/09-legkiy-dizayn.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/10-ukreplenie-gelem.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/11-glyantsevyy-french-na-matovom-pokrytii.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/12-legkiy-dizayn.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/13-muzhskoy-manikyur.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/14-legkiy-dizayn.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/15-gradient.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/16-kombo-manikyur-i-pedikyur.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/17-ukreplenie-gelem-s-sukhotsvetami.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/18-ukreplenie-gelem.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/19-legkiy-dizayn.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/20-koshachiy-glaz.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/21-legkiy-dizayn.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/22-french.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/23-osenniy-manikyur.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/24-vitrazhnaya-roza.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/25-ukreplenie-gelem.webp</image:loc></image:image>
+    <image:image><image:loc>https://magicalnails.ru/photos/works/26-french-s-sukhotsvetami.webp</image:loc></image:image>
   </url>
 </urlset>
