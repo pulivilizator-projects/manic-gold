@@ -23,3 +23,8 @@ https://dmitriy-dmgora.sourcecraft.site/manic-gold-test/ — копия для �
 3. После проверки — слить ветку в `main` и запушить на GitHub.
 
 Нужен SSH-ключ `~/.ssh/sourcecraft_manic_gold`, добавленный в SourceCraft (Профиль → SSH-ключи).
+
+## IndexNow (Яндекс)
+
+Ключ — файл `0090be1c5459e8cd6afe46acaa14e064.txt` в корне, не удалять. После выкладки изменений сообщить Яндексу:
+`uv run …/yandex-seo/scripts/yandex_indexnow.py submit --host magicalnails.ru --key 0090be1c5459e8cd6afe46acaa14e064 --key-location https://magicalnails.ru/0090be1c5459e8cd6afe46acaa14e064.txt --urls https://magicalnails.ru/ --apply`
