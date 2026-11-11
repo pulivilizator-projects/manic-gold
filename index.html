@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Маникюр в Кимрах — мастер Анастасия Морозова</title>
+<title>Маникюр и педикюр в Кимрах — мастер Анастасия Морозова</title>
 <meta name="description" content="Маникюр с покрытием гель-лаком и укреплением, педикюр, мужской маникюр в Кимрах. Мастер с медицинским образованием, стерильные инструменты, массажёр для ног. Запись в MAX и ВКонтакте.">
 <!-- адрес сайта https://magicalnails.ru/: при смене домена заменить здесь, в JSON-LD ниже, в robots.txt и sitemap.xml -->
 <link rel="canonical" href="https://magicalnails.ru/">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Анастасия Морозова — маникюр">
-<meta property="og:title" content="Маникюр в Кимрах — мастер Анастасия Морозова">
+<meta property="og:title" content="Маникюр и педикюр в Кимрах — мастер Анастасия Морозова">
 <meta property="og:description" content="Медицинское образование, стерильные инструменты, массажёр для ног. Запись в MAX и ВКонтакте.">
 <meta property="og:url" content="https://magicalnails.ru/">
 <meta property="og:image" content="https://magicalnails.ru/photos/works/01.jpg">
@@ -34,8 +34,10 @@
     "streetAddress": "ул. Кольцова, 48, салон LakMyss (вход со стороны Вайлдберрис)",
     "addressLocality": "Кимры",
     "addressRegion": "Тверская область",
+    "postalCode": "171508",
     "addressCountry": "RU"
   },
+  "geo": {"@type": "GeoCoordinates", "latitude": 56.8804, "longitude": 37.3457},
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -138,9 +140,9 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
 .gf-card{width:200px;height:270px;margin:-135px 0 0 -100px}
 }
 /* разделители не пересекают золотые потоки по краям экрана */
-#why,#works,#prices,#reviews,#contacts,.gf-root>footer,.gf-marq{--gx:14px;position:relative;border-top-color:transparent!important;border-bottom-color:transparent!important}
-@media (min-width:900px){#why,#works,#prices,#reviews,#contacts,.gf-root>footer,.gf-marq{--gx:62px}}
-#why::before,#works::before,#prices::before,#reviews::before,#contacts::before,.gf-root>footer::before,.gf-marq::before,.gf-marq::after{content:"";position:absolute;left:var(--gx);right:var(--gx);top:-1px;height:1px;background:#2A2418;pointer-events:none}
+#why,#services,#works,#prices,#reviews,#faq,#contacts,.gf-root>footer,.gf-marq{--gx:14px;position:relative;border-top-color:transparent!important;border-bottom-color:transparent!important}
+@media (min-width:900px){#why,#services,#works,#prices,#reviews,#faq,#contacts,.gf-root>footer,.gf-marq{--gx:62px}}
+#why::before,#services::before,#works::before,#prices::before,#reviews::before,#faq::before,#contacts::before,.gf-root>footer::before,.gf-marq::before,.gf-marq::after{content:"";position:absolute;left:var(--gx);right:var(--gx);top:-1px;height:1px;background:#2A2418;pointer-events:none}
 .gf-marq::before{top:0}.gf-marq::after{top:auto;bottom:0}  /* у бегущей строки overflow:hidden — линии внутри */
 .gf-tb,.gf-t2,.gf-tm,.gf-t4,.gf-th{fill:none;stroke-linecap:round;stroke-linejoin:round}
 /* палитра взята с потока на canvas, чтобы SVG-трубки продолжали его без смены цвета */
@@ -169,6 +171,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
       </a>
       <nav class="gf-navlinks" aria-label="Разделы" style="flex-wrap: wrap; gap: 28px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase">
         <a href="#about" style="color: #CFC6B5; text-decoration: none; padding: 12px 0">Обо мне</a>
+        <a href="#services" style="color: #CFC6B5; text-decoration: none; padding: 12px 0">Услуги</a>
         <a href="#works" style="color: #CFC6B5; text-decoration: none; padding: 12px 0">Работы</a>
         <a href="#prices" style="color: #CFC6B5; text-decoration: none; padding: 12px 0">Цены</a>
         <a href="#reviews" style="color: #CFC6B5; text-decoration: none; padding: 12px 0">Отзывы</a>
@@ -180,15 +183,15 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
 
   <section id="top" onPointerMove="{{ onMove }}" onPointerDown="{{ onDown }}" style="max-width: 1320px; margin: 0 auto; padding: 16px clamp(20px, 5vw, 56px) 72px; box-sizing: border-box; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 24px 40px">
     <div style="flex: 1 1 440px; max-width: 580px; display: flex; flex-direction: column; gap: 26px">
-      <p data-reveal="" style="margin: 0; font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: #A39A8A">Мастер маникюра · Кимры</p>
-      <h1 data-reveal="" style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: clamp(36px, 5.2vw, 76px); line-height: 1.04; letter-spacing: 0.03em; text-transform: uppercase; transition-delay: 0.1s"><span class="gf-gold">Маникюр у Анастасии Морозовой</span></h1>
-      <p data-reveal="" style="margin: 0; font-size: clamp(17px, 1.4vw, 19px); font-weight: 300; line-height: 1.65; color: #D8D0C2; text-wrap: pretty; transition-delay: 0.2s">У Анастасии медицинское образование: инструменты у неё всегда после стерилизации, а лишнего с кутикулы она не срезает. Пока она занимается руками, ваши ноги отдыхают на массажёре.</p>
-      <div data-reveal="" style="display: flex; flex-wrap: wrap; gap: 10px; transition-delay: 0.3s">
+      <p style="margin: 0; font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: #A39A8A">Мастер маникюра и педикюра · Кимры</p>
+      <h1 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: clamp(36px, 5.2vw, 76px); line-height: 1.04; letter-spacing: 0.03em; text-transform: uppercase; transition-delay: 0.1s"><span class="gf-gold">Маникюр в Кимрах у Анастасии Морозовой</span></h1>
+      <p style="margin: 0; font-size: clamp(17px, 1.4vw, 19px); font-weight: 300; line-height: 1.65; color: #D8D0C2; text-wrap: pretty; transition-delay: 0.2s">У Анастасии медицинское образование: инструменты у неё всегда после стерилизации, а лишнего с кутикулы она не срезает. Пока она занимается руками, ваши ноги отдыхают на массажёре.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
         <a href="https://max.ru/u/f9LHodD0cOJ3EiCFP93_O9EZThpVpJZK4UOhAXm0fDwqngoOGchCA08x2O8" style="flex: 1 1 100%; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 10px; height: 58px; padding: 0 28px; background: linear-gradient(180deg, #E9C97F, #C49A4A); color: #0B0A08; text-decoration: none; font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.4-4.4a8.5 8.5 0 1 1 15.6-4.6z"></path></svg>Записаться в MAX<span class="gf-shine" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 24%; height: 100%; background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 250, 230, 0.7), rgba(255, 255, 255, 0))"></span></a>
         <a class="gf-vk" href="https://vk.ru/mademoiselle_nastenka"  style="flex: 1 1 150px; display: flex; align-items: center; justify-content: center; gap: 10px; height: 58px; padding: 0 20px; border: 1px solid #8E6B2E; color: #E2C27F; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase"><svg width="20" height="20" viewBox="2.5 2.5 19 19" fill="currentColor" aria-hidden="true"><path d="M3.5 7h2.9c.2 3.6 1.7 5.4 3.1 5.8V7h2.7v3.3c1.4-.2 2.8-1.8 3.3-3.3h2.7c-.4 2-1.9 3.5-3 4.1 1.1.5 2.8 1.9 3.5 4.4h-3c-.6-1.7-2-3-3.5-3.2v3.2h-.4C6.6 15.5 3.7 12.4 3.5 7z"></path></svg>ВКонтакте</a>
         <a href="tel:+79301555369" style="flex: 1 1 150px; display: flex; align-items: center; justify-content: center; height: 58px; padding: 0 20px; border: 1px solid #8E6B2E; color: #E2C27F; text-decoration: none; font-weight: 500; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Позвонить</a>
       </div>
-      <dl data-reveal="" class="gf-facts" style="margin: 6px 0 0; display: grid; gap: 1px; background: #2A2418; border: 1px solid #2A2418; transition-delay: 0.4s">
+      <dl class="gf-facts" style="margin: 6px 0 0; display: grid; gap: 1px; background: #2A2418; border: 1px solid #2A2418">
         <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; background: #0B0A08"><dt style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #B8913F">Образование</dt><dd style="margin: 0; font-size: 15px; line-height: 1.4">Кимрский медицинский колледж, 2024</dd></div>
         <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; background: #0B0A08"><dt style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #B8913F">Опыт</dt><dd style="margin: 0; font-size: 15px; line-height: 1.4">3 года в маникюре</dd></div>
         <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; background: #0B0A08"><dt style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #B8913F">Часы</dt><dd style="margin: 0; font-size: 15px; line-height: 1.4">Пн–сб, 10:00–20:00</dd></div>
@@ -212,8 +215,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
 
   <div class="gf-marq" aria-hidden="true" style="border-top: 1px solid #2A2418; border-bottom: 1px solid #2A2418; overflow: hidden; padding: 16px 0">
     <div class="gf-marquee" style="display: flex; width: max-content; gap: 36px; font-family: 'Forum', Georgia, serif; font-size: clamp(22px, 2vw, 28px); letter-spacing: 0.1em; text-transform: uppercase; color: #C9A45C; white-space: nowrap">
-      <span>Маникюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span><span>Маникюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span>
-      <span>Маникюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span><span>Маникюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span>
+      <span>Маникюр</span><span>✦</span><span>Педикюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span><span>Маникюр</span><span>✦</span><span>Педикюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span>
+      <span>Маникюр</span><span>✦</span><span>Педикюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span><span>Маникюр</span><span>✦</span><span>Педикюр</span><span>✦</span><span>Гель-лак</span><span>✦</span><span>Укрепление</span><span>✦</span><span>Дизайн</span><span>✦</span>
     </div>
   </div>
 
@@ -272,6 +275,32 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
           </li>
         </ol>
       </div>
+    </div>
+  </section>
+
+  <section id="services" style="border-top: 1px solid #2A2418">
+    <div style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 56px); box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <p data-reveal="" style="margin: 0; font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: #B8913F">Услуги</p>
+        <h2 data-reveal="" style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 56px); line-height: 1.08; letter-spacing: 0.03em; text-transform: uppercase; max-width: 760px"><span class="gf-gold">Маникюр и педикюр в Кимрах</span></h2>
+      </div>
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px 40px; min-width: 0">
+          <li data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0 0; border-top: 1px solid #8E6B2E">
+            <h3 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; color: #F3D58E">Маникюр с покрытием и укреплением</h3>
+            <p style="margin: 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: #D8D0C2; max-width: 560px">Комбинированный маникюр, покрытие гель-лаком и укрепление гелем. Из дизайна — френч, кошачий глаз, градиент, сухоцветы. Кутикулу Анастасия обрабатывает бережно и лишнего не срезает.</p>
+            <p style="margin: 0; font-family: 'Forum', Georgia, serif; font-size: 26px; line-height: 1; color: #E2C27F">от 1000 ₽</p>
+          </li>
+          <li data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0 0; border-top: 1px solid #8E6B2E">
+            <h3 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; color: #F3D58E">Педикюр</h3>
+            <p style="margin: 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: #D8D0C2; max-width: 560px">Комбинированный педикюр с обработкой стопы и покрытием гель-лаком. Инструменты — после стерилизации, как и для маникюра. Педикюр можно сделать вместе с маникюром за один визит.</p>
+            <p style="margin: 0; font-family: 'Forum', Georgia, serif; font-size: 26px; line-height: 1; color: #E2C27F">2600 ₽</p>
+          </li>
+          <li data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0 0; border-top: 1px solid #8E6B2E">
+            <h3 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; color: #F3D58E">Мужской маникюр</h3>
+            <p style="margin: 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: #D8D0C2; max-width: 560px">Комбинированный маникюр для мужчин: кутикула, форма и аккуратный вид ногтей. Тот же кабинет и те же стерильные инструменты.</p>
+            <p style="margin: 0; font-family: 'Forum', Georgia, serif; font-size: 26px; line-height: 1; color: #E2C27F">1000 ₽</p>
+          </li>
+      </ul>
     </div>
   </section>
 
@@ -374,6 +403,41 @@ a:focus-visible,button:focus-visible{outline:2px solid #F3D58E;outline-offset:3p
         <blockquote style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.65; color: #E4DCCD">Первый раз решил попробовать мужской маникюр, все прошло хорошо</blockquote>
         <figcaption style="margin-top: auto; font-size: 14px; color: #B8913F">Виктор</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section id="faq" style="border-top: 1px solid #2A2418">
+    <div style="max-width: 1320px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 56px); box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <p data-reveal="" style="margin: 0; font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: #B8913F">Вопросы</p>
+        <h2 data-reveal="" style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 56px); line-height: 1.08; letter-spacing: 0.03em; text-transform: uppercase; max-width: 760px"><span class="gf-gold">Частые вопросы</span></h2>
+      </div>
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px 40px; min-width: 0">
+          <li data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0 0; border-top: 1px solid #8E6B2E">
+            <h3 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; color: #F3D58E">Как записаться?</h3>
+            <p style="margin: 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: #D8D0C2; max-width: 560px">Напишите Анастасии в MAX или ВКонтакте или позвоните: <a href="tel:+79301555369" style="color: #E2C27F">+7 930 155-53-69</a>.</p>
+          </li>
+          <li data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0 0; border-top: 1px solid #8E6B2E">
+            <h3 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; color: #F3D58E">Где принимает мастер?</h3>
+            <p style="margin: 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: #D8D0C2; max-width: 560px">Кимры, ул. Кольцова, 48, салон LakMyss. Вход со стороны Вайлдберрис.</p>
+          </li>
+          <li data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0 0; border-top: 1px solid #8E6B2E">
+            <h3 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; color: #F3D58E">Когда можно прийти?</h3>
+            <p style="margin: 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: #D8D0C2; max-width: 560px">С понедельника по субботу, с 10:00 до 20:00.</p>
+          </li>
+          <li data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0 0; border-top: 1px solid #8E6B2E">
+            <h3 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; color: #F3D58E">Сколько стоит маникюр?</h3>
+            <p style="margin: 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: #D8D0C2; max-width: 560px">Комбинированный маникюр — 1000 ₽, с укреплением и покрытием гель-лаком — 2000 ₽, педикюр с покрытием — 2600 ₽. Все цены — в разделе «Цены».</p>
+          </li>
+          <li data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0 0; border-top: 1px solid #8E6B2E">
+            <h3 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; color: #F3D58E">Инструменты стерильные?</h3>
+            <p style="margin: 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: #D8D0C2; max-width: 560px">Да. У Анастасии медицинское образование, и инструменты у неё всегда после стерилизации.</p>
+          </li>
+          <li data-reveal="" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0 0; border-top: 1px solid #8E6B2E">
+            <h3 style="margin: 0; font-family: 'Forum', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; color: #F3D58E">Что, если с ногтем что-то не так?</h3>
+            <p style="margin: 0; font-size: 18px; font-weight: 300; line-height: 1.65; color: #D8D0C2; max-width: 560px">Анастасия скажет об этом честно и посоветует показаться врачу. Лечением она не занимается — только маникюр и педикюр.</p>
+          </li>
+      </ul>
     </div>
   </section>
 
