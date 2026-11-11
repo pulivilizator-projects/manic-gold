@@ -903,7 +903,8 @@ class Component extends DCLogic {
 
   initGL(el) {
     if (this.gl) return;
-    const gl = el.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false });
+    // без видеокарты (программный рендер) шейдер вешает страницу на десятки секунд — тогда золото не рисуем
+    const gl = el.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false, failIfMajorPerformanceCaveat: true });
     if (!gl) return;
     const VS = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
     const FS = `precision highp float;
