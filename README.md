@@ -13,3 +13,13 @@
 Запись: MAX и ВКонтакте; ссылки и телефон — в `index.html` (поиск по `max.ru`, `vk.ru`, `tel:`) и в JSON-LD.
 
 При смене домена заменить адрес `https://magicalnails.ru/` в `index.html`, `robots.txt` и `sitemap.xml`.
+
+## Тестовый сайт
+
+https://dmitriy-dmgora.sourcecraft.site/manic-gold-test/ — копия для проверки правок до продакшена (SourceCraft, репозиторий `dmitriy-dmgora/manic-gold-test`).
+
+1. Правки — в отдельной ветке, не в `main` (пуш в `main` на GitHub сразу уходит на magicalnails.ru).
+2. `./staging.sh` — выложить текущую ветку на тестовый сайт. Скрипт закрывает копию от поисковиков (`robots.txt` + `noindex`) и отключает Метрику; в репозиторий эти правки не попадают.
+3. После проверки — слить ветку в `main` и запушить на GitHub.
+
+Нужен SSH-ключ `~/.ssh/sourcecraft_manic_gold`, добавленный в SourceCraft (Профиль → SSH-ключи).
